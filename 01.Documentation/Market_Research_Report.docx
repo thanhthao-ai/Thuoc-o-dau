@@ -1,0 +1,484 @@
+BÁO CÁO NGHIÊN CỨU THỊ TRƯỜNG VÀ ĐỊNH HƯỚNG PHÁT TRIỂN SẢN PHẨM
+DỰ ÁN ỨNG DỤNG “TỦ THUỐC GIA ĐÌNH”
+Tên tiếng Anh: Family Medicine Cabinet / Pill Reminder & Inventory App
+Lĩnh vực: Công nghệ y tế (HealthTech)
+Thị trường mục tiêu: Việt Nam
+Thời điểm rà soát thông tin: 24/10/2026
+________________________________________
+I. TỔNG QUAN DỰ ÁN VÀ CƠ HỘI THỊ TRƯỜNG
+1. Bối cảnh và vấn đề cần giải quyết
+Trong các hộ gia đình có nhiều thế hệ, việc quản lý thuốc thường được thực hiện bằng phương pháp thủ công, dựa trên trí nhớ hoặc thông tin ghi chép phân tán. Các thành viên có thể lưu trữ nhiều loại thuốc với mục đích sử dụng, liều dùng, hạn sử dụng và điều kiện bảo quản khác nhau. Tuy nhiên, việc kiểm kê và theo dõi những thông tin này chưa phải lúc nào cũng được thực hiện có hệ thống.
+Các vấn đề điển hình bao gồm:
+•	Không nắm rõ những loại thuốc hiện có trong gia đình, số lượng còn lại và vị trí lưu trữ.
+•	Nhầm lẫn thuốc giữa các thành viên, đặc biệt trong gia đình có người cao tuổi và trẻ em.
+•	Quên lịch dùng thuốc hoặc khó theo dõi việc sử dụng thuốc của người thân.
+•	Không thường xuyên kiểm tra hạn sử dụng, dẫn đến việc tiếp tục lưu trữ thuốc đã hết hạn.
+•	Không kiểm soát được lượng thuốc tồn dư sau mỗi đợt điều trị, dẫn đến nguy cơ tự sử dụng lại thuốc không phù hợp.
+•	Thiếu thông tin tập trung để xác định thời điểm cần bổ sung thuốc, kiểm kê hoặc rà soát tủ thuốc.
+•	Khó phối hợp giữa những người cùng chăm sóc một thành viên trong gia đình.
+Từ thực trạng trên, dự án “Tủ thuốc gia đình” hướng đến xây dựng một ứng dụng di động hỗ trợ quản lý thuốc ở cấp hộ gia đình, kết hợp quản lý tồn kho, theo dõi hạn sử dụng, nhắc nhở dùng thuốc và phối hợp giữa các thành viên.
+2. Nhận định chiến lược về thị trường
+Thị trường ứng dụng quản lý thuốc hiện đã có nhiều sản phẩm tương đối hoàn thiện, tiêu biểu như Medisafe, MyTherapy và CareClinic. Bên cạnh đó, Pillo và HomeMed đã tiếp cận trực tiếp bài toán quản lý tủ thuốc, hạn sử dụng và số lượng thuốc tồn kho. Tại Việt Nam, DrugBank kết hợp tra cứu thông tin thuốc bằng tiếng Việt với chức năng nhắc uống thuốc.
+Vì vậy, dự án không nên được định vị đơn thuần là một ứng dụng nhắc uống thuốc hoặc quản lý hạn sử dụng. Các chức năng này đã xuất hiện trên những sản phẩm hiện có và chưa đủ để tạo ra lợi thế cạnh tranh bền vững.
+Hướng phát triển phù hợp hơn là xây dựng một hệ thống quản lý thuốc được thiết kế riêng cho hộ gia đình nhiều thế hệ, tập trung vào ba trụ cột:
+1.	Quản lý kho thuốc: Theo dõi tên thuốc, số lượng, hạn sử dụng, vị trí lưu trữ và tình trạng tồn kho.
+2.	Quản lý theo thành viên: Phân biệt thuốc của từng người, hỗ trợ người chăm sóc theo dõi thông tin trong phạm vi được phân quyền.
+3.	Nhắc nhở và ghi nhận sử dụng: Quản lý lịch dùng thuốc, ghi nhận trạng thái sử dụng, cảnh báo tồn kho thấp và thuốc sắp hết hạn.
+Định vị sản phẩm đề xuất:
+“Một tủ thuốc số dùng chung cho cả gia đình, giúp các thành viên biết gia đình đang có những loại thuốc nào, thuốc thuộc về ai, còn bao nhiêu, khi nào cần dùng và khi nào cần kiểm tra hạn sử dụng.”
+3. Tín hiệu nhu cầu tại thị trường Việt Nam
+Một nghiên cứu cộng đồng được thực hiện trên 800 hộ gia đình tại Đà Nẵng ghi nhận các kết quả đáng chú ý sau:
+•	71,6% số hộ được khảo sát có lưu trữ thuốc tại nhà.
+•	68,1% số hộ lưu trữ thuốc có giữ thuốc để sử dụng trong tương lai.
+•	19,4% số hộ lưu trữ thuốc không kiểm tra hạn sử dụng thường xuyên.
+•	80,8% số hộ lưu trữ thuốc có thuốc giảm đau – hạ sốt; đây là nhóm thuốc phổ biến nhất.
+Nguồn: Nghiên cứu về việc lưu trữ thuốc tại hộ gia đình ở Việt Nam, thực hiện trên 800 hộ tại Đà Nẵng.
+Tham khảo: https://pmc.ncbi.nlm.nih.gov/articles/PMC10812093/
+Các tỷ lệ trên có thể sử dụng những mẫu số khác nhau; chẳng hạn, tỷ lệ 19,4% không đồng nghĩa với 19,4% của toàn bộ 800 hộ khảo sát. Kết quả nghiên cứu tại Đà Nẵng cũng không được xem là đại diện tuyệt đối cho tất cả hộ gia đình trên toàn quốc.
+Một nghiên cứu khác trên 997 người đã sử dụng kháng sinh tại Việt Nam ghi nhận:
+•	27,3% người tham gia lưu trữ kháng sinh tại nhà để sử dụng trong tương lai.
+•	Trong nhóm lưu trữ kháng sinh, 69,1% cho biết nguồn thuốc là phần còn dư từ các đợt điều trị trước.
+•	Nghiên cứu cũng ghi nhận tình trạng tự sử dụng kháng sinh.
+Nguồn: https://pmc.ncbi.nlm.nih.gov/articles/PMC12105128/
+Kết quả này gợi ý rằng việc quản lý thuốc tồn dư là một vấn đề cần được quan tâm. Tuy nhiên, không nên diễn giải các tỷ lệ trên thành tỷ lệ áp dụng cho mọi hộ gia đình Việt Nam.
+Từ những dữ liệu hiện có, dự án cần tiếp tục kiểm chứng ba giả thuyết:
+•	Người dùng cần một công cụ giúp kiểm kê thuốc hiện có, hạn chế mua trùng và tìm lại thuốc khi cần.
+•	Người chăm sóc cần biết thuốc nào thuộc về ai, số lượng còn lại và lịch sử sử dụng.
+•	Người dùng cần được hỗ trợ nhận biết thuốc tồn dư hoặc hết hạn, thay vì chỉ dựa vào trí nhớ.
+Những giả thuyết này có cơ sở thực tiễn, nhưng chưa đủ để kết luận người dùng sẽ chủ động cài đặt, sử dụng thường xuyên hoặc trả phí cho ứng dụng. Cần thực hiện khảo sát, phỏng vấn và thử nghiệm sản phẩm để xác định mức độ nhu cầu thực tế.
+________________________________________
+II. RÀ SOÁT THỊ TRƯỜNG VÀ PHÂN TÍCH ĐỐI THỦ
+1. Phạm vi phân tích
+Các ứng dụng được lựa chọn dựa trên mức độ liên quan đến quản lý thuốc, lịch dùng thuốc, theo dõi sức khỏe và quản lý tủ thuốc tại nhà. Danh sách nhằm xác định nhóm đối thủ trực tiếp và gián tiếp, không phải bảng xếp hạng thị phần chính thức.
+Các thông tin về lượt tải, điểm đánh giá và tính năng được ghi nhận theo nguồn cửa hàng ứng dụng hoặc trang thông tin sản phẩm tại thời điểm rà soát. Những thông tin chưa được xác minh được ghi rõ, không mặc định rằng ứng dụng chắc chắn không có tính năng đó.
+2. Phân tích các ứng dụng tiêu biểu
+2.1. Medisafe
+Định vị: Ứng dụng quản lý điều trị bằng thuốc và hỗ trợ người chăm sóc.
+Tính năng nổi bật:
+•	Nhắc uống thuốc theo lịch.
+•	Quản lý các lịch dùng thuốc phức tạp.
+•	Ghi nhận liều đã dùng.
+•	Nhắc bổ sung thuốc.
+•	Theo dõi một số chỉ số sức khỏe.
+•	Xuất báo cáo phục vụ trao đổi với bác sĩ.
+•	Chia sẻ tiến độ dùng thuốc với người thân thông qua tính năng Medfriend.
+Điểm mạnh:
+Medisafe có hệ sinh thái quản lý thuốc và hỗ trợ người chăm sóc tương đối toàn diện. Theo thông tin trên Google Play tại thời điểm rà soát, ứng dụng có trên 5 triệu lượt tải, khoảng 249.000 đánh giá và điểm trung bình 4,5/5.
+Hạn chế và khoảng trống cần lưu ý:
+•	Theo thông tin công bố trên Google Play, tính năng kiểm tra tương tác thuốc chỉ dành cho người dùng tại Hoa Kỳ khi ứng dụng được sử dụng bằng tiếng Anh.
+•	Tại các thị trường ngoài Hoa Kỳ, ứng dụng có mô hình dùng thử 14 ngày trước khi yêu cầu trả phí để tiếp tục sử dụng theo thông tin đã khảo sát.
+•	Cần đánh giá thêm mức độ phù hợp của quy trình nhập thuốc, ngôn ngữ và cách quản lý tồn kho đối với người dùng Việt Nam.
+Nguồn: https://play.google.com/store/apps/details?id=com.medisafe.android.client
+2.2. MyTherapy
+Định vị: Ứng dụng nhắc uống thuốc kết hợp theo dõi sức khỏe.
+Tính năng nổi bật:
+•	Lập lịch và nhắc uống thuốc.
+•	Ghi nhận việc sử dụng thuốc.
+•	Theo dõi lượng thuốc còn lại và nhắc bổ sung.
+•	Ghi nhật ký triệu chứng.
+•	Theo dõi huyết áp, đường huyết, cân nặng và các chỉ số khác.
+•	Quản lý nhiều hồ sơ thành viên gia đình.
+Điểm mạnh:
+MyTherapy hỗ trợ nhiều loại lịch điều trị, lịch sử dùng thuốc và theo dõi sức khỏe. Theo dữ liệu Google Play được ghi nhận trong đợt rà soát, ứng dụng có trên 5 triệu lượt tải, khoảng 242.000 đánh giá và điểm trung bình 4,6/5.
+Hạn chế và khoảng trống cần lưu ý:
+•	Cần tối ưu thao tác nhập kho thuốc và các đơn vị đóng gói thường gặp tại Việt Nam.
+•	Cần đảm bảo số lượng tồn kho có thể được liên kết rõ ràng với các lần sử dụng thuốc đã ghi nhận.
+•	Người dùng cần có khả năng nhập số lượng thực tế thay vì bị giới hạn bởi một số quy ước số lượng cứng nhắc.
+Nguồn: https://play.google.com/store/apps/details?id=eu.smartpatient.mytherapy
+2.3. CareClinic
+Định vị: Ứng dụng theo dõi sức khỏe tổng thể và quản lý điều trị.
+Tính năng nổi bật:
+•	Nhắc dùng thuốc.
+•	Theo dõi triệu chứng, tâm trạng và tác dụng phụ.
+•	Ghi nhận các hoạt động liên quan đến sức khỏe.
+•	Chia sẻ dữ liệu với người chăm sóc.
+•	Xuất báo cáo cho bác sĩ.
+Điểm mạnh:
+CareClinic kết nối thông tin dùng thuốc với nhật ký sức khỏe, hỗ trợ người dùng tổng hợp dữ liệu để trao đổi với nhân viên y tế.
+Hạn chế và khoảng trống cần lưu ý:
+•	Phạm vi chức năng rộng có thể làm tăng độ phức tạp của quá trình nhập liệu và sử dụng.
+•	Google Play được ghi nhận hiển thị điểm trung bình 3,6/5 với khoảng 1.160 đánh giá.
+•	Điểm đánh giá thấp hơn một số đối thủ là tín hiệu cần xem xét, nhưng không đủ để kết luận nguyên nhân cụ thể hoặc khẳng định trải nghiệm kém đối với toàn bộ người dùng.
+Nguồn: https://careclinic.io/medicine-tracker/
+2.4. Pillo
+Định vị: Ứng dụng nhắc uống thuốc và quản lý kho thuốc cá nhân.
+Tính năng nổi bật:
+•	Lưu thông tin và hình ảnh thuốc.
+•	Theo dõi hạn sử dụng.
+•	Lưu lịch dùng thuốc.
+•	Hỗ trợ tìm kiếm và lọc thuốc.
+•	Giới thiệu cơ chế lưu dữ liệu trên thiết bị và không bắt buộc tạo tài khoản.
+Điểm mạnh:
+Pillo có mức độ tương đồng cao với ý tưởng tủ thuốc số, bởi sản phẩm không chỉ tập trung vào nhắc uống thuốc mà còn hướng đến lưu trữ và quản lý thông tin thuốc.
+Hạn chế và khoảng trống cần lưu ý:
+•	Dữ liệu đánh giá của phiên bản iOS tại thị trường Việt Nam chưa đủ để kết luận mức độ chấp nhận của người dùng địa phương.
+•	Thông tin công bố chưa đủ để xác nhận một quy trình phối hợp nhiều thành viên gia đình hoàn chỉnh.
+Nguồn: https://apps.apple.com/vn/app/pillo-pill-reminder-tracker/id6736664288
+2.5. HomeMed
+Định vị: Ứng dụng số hóa tủ thuốc tại nhà.
+Tính năng nổi bật:
+•	Chụp ảnh và lưu thông tin thuốc.
+•	Theo dõi số lượng thuốc.
+•	Cảnh báo hạn sử dụng trước 90 ngày và 10 ngày theo thông tin công bố.
+•	Tìm kiếm theo tên hoặc từ khóa triệu chứng.
+•	Lưu vị trí bảo quản.
+•	Hỗ trợ sao lưu dữ liệu.
+Điểm mạnh:
+HomeMed tập trung trực tiếp vào các vấn đề thất lạc thuốc, thuốc hết hạn và mua trùng, tương đồng với mục tiêu cốt lõi của dự án.
+Hạn chế và khoảng trống cần lưu ý:
+•	Theo trang Google Play được khảo sát, sản phẩm hướng đến thị trường Ấn Độ và liệt kê các ngôn ngữ tiếng Anh, Hindi, Gujarati và Marathi.
+•	Lượt tải được hiển thị ở mức trên 100 tại thời điểm rà soát.
+•	Chưa đủ cơ sở để xác định mức độ cạnh tranh thực tế của sản phẩm tại Việt Nam.
+Nguồn: https://play.google.com/store/apps/details?hl=vi&id=com.devasyainnovation.home_med
+2.6. DrugBank – Tra Cứu Thuốc, Dược
+Định vị: Ứng dụng tra cứu thuốc bằng tiếng Việt kết hợp nhắc dùng thuốc.
+Tính năng nổi bật:
+•	Tra cứu tên thuốc và hoạt chất.
+•	Tra cứu thông tin tham khảo về chỉ định, liều dùng, tương tác và tác dụng phụ.
+•	Nhắc uống thuốc.
+•	Ghi nhận trạng thái đã dùng, bỏ qua hoặc hoãn.
+•	Tìm nhà thuốc gần vị trí hiện tại.
+Điểm mạnh:
+DrugBank có lợi thế về ngôn ngữ và nhu cầu tra cứu thông tin thuốc trong nước. Đây là đối thủ cần được xem xét khi định hình các chức năng Việt hóa và dữ liệu thuốc.
+Hạn chế và khoảng trống cần lưu ý:
+•	Theo thông tin công bố, dữ liệu trong mục “Thuốc của tôi” được lưu trên thiết bị và không đồng bộ lên máy chủ.
+•	Dự án có thể tạo khác biệt thông qua quản lý tồn kho ở cấp hộ gia đình và chia sẻ dữ liệu có phân quyền, nếu triển khai thực tế đáp ứng tốt các nhu cầu này.
+Nguồn: https://play.google.com/store/apps/details?hl=vi&id=app.drugbank
+Theo thông tin được ghi nhận trong lần rà soát, ứng dụng có bản cập nhật được liệt kê ngày 10/09/2026.
+3. So sánh các tính năng cốt lõi
+Ứng dụng	Nhắc uống thuốc	Quản lý kho và lượng còn lại	Theo dõi hạn dùng từng lô	Quản lý gia đình	Theo dõi sức khỏe
+Medisafe	Có	Có theo dõi thuốc và bổ sung thuốc	Chưa xác minh	Có thông qua Medfriend	Có
+MyTherapy	Có	Có	Chưa xác minh	Có hồ sơ gia đình	Có
+CareClinic	Có	Có theo dõi thuốc và bổ sung	Chưa xác minh	Có hỗ trợ người chăm sóc/người phụ thuộc	Có
+Pillo	Có	Có	Có theo thông tin sản phẩm	Chưa xác minh quy trình chia sẻ gia đình	Không phải trọng tâm
+HomeMed	Chưa xác minh là trọng tâm	Có	Có	Chưa xác minh	Không phải trọng tâm
+DrugBank	Có	Có danh sách thuốc đang dùng	Chưa xác minh	Chưa xác minh đồng bộ gia đình	Có một số thông tin y dược
+Bảng so sánh phản ánh thông tin đã được công bố và khảo sát trong phạm vi rà soát. “Chưa xác minh” không đồng nghĩa với việc ứng dụng chắc chắn không có chức năng tương ứng.
+4. Kết luận về cạnh tranh
+Các chức năng nhắc uống thuốc, theo dõi hạn sử dụng và quản lý hồ sơ gia đình đã xuất hiện trên những sản phẩm hiện có. Vì vậy, đây không nên là các lợi thế cạnh tranh độc lập của dự án.
+Hướng phát triển có tiềm năng hơn là quản lý trọn vẹn vòng đời thuốc trong hộ gia đình:
+Thuốc được mua hoặc mang về nhà → nhập kho → phân cho thành viên → theo dõi sử dụng → kiểm kê và bổ sung → xử lý thuốc hết hạn.
+Đây là định hướng định vị sản phẩm cần được tiếp tục kiểm chứng bằng khảo sát nhu cầu và thử nghiệm thực tế.
+________________________________________
+III. PHÂN TÍCH NỖI ĐAU NGƯỜI DÙNG VÀ KHOẢNG TRỐNG THỊ TRƯỜNG
+1. Các vấn đề được phản ánh trong đánh giá người dùng
+Đánh giá trên App Store và Google Play có thể giúp nhận diện những khó khăn trong trải nghiệm sử dụng. Tuy nhiên, các đánh giá cá nhân không đại diện cho toàn bộ người dùng và cần được diễn giải trong đúng bối cảnh phiên bản, thiết bị và thời điểm phản ánh.
+1.1. Độ tin cậy của thông báo và trạng thái sử dụng thuốc
+Một đánh giá Medisafe ngày 07/01/2025 cho biết thay đổi lịch thuốc không được lưu chính xác và ứng dụng tiếp tục hỏi về liều đã được đánh dấu là đã dùng. Trong một đánh giá ngày 14/08/2026, người dùng khác phản ánh chuông nhắc không hoạt động tại nhiều khung giờ trong ngày, dẫn đến bỏ lỡ liều.
+Nguồn: https://play.google.com/store/apps/details?id=com.medisafe.android.client
+Hàm ý đối với sản phẩm:
+•	Đảm bảo lịch dùng thuốc và các thay đổi được lưu chính xác.
+•	Đảm bảo trạng thái xác nhận liều nhất quán giữa các màn hình và lịch sử.
+•	Thiết kế cơ chế xử lý lỗi thông báo, kiểm tra quyền thông báo và hỗ trợ khắc phục lỗi.
+•	Phân biệt rõ thông báo đã được gửi với việc người dùng đã thực sự xác nhận sử dụng thuốc.
+Độ tin cậy cần được xem là yêu cầu nền tảng của sản phẩm, không phải một chức năng phụ.
+1.2. Độ phức tạp khi quản lý nhiều loại thuốc
+Một đánh giá MyTherapy ngày 06/12/2024 cho rằng giao diện mới có quá nhiều ô xác nhận, khó thao tác khi người dùng sử dụng nhiều thuốc và không còn thuận tiện như việc xác nhận trực tiếp từ thông báo.
+Một đánh giá ngày 18/09/2026 cũng nêu nhu cầu nhập lượng thuốc linh hoạt hơn trong trường hợp người dùng mua theo hộp 28 ngày nhưng hệ thống thuận tiện hơn với các bội số 10 viên.
+Nguồn: https://play.google.com/store/apps/details?id=eu.smartpatient.mytherapy
+Hàm ý đối với sản phẩm:
+•	Hạn chế số thao tác cần thiết cho các hành động thường xuyên.
+•	Cho phép nhập số lượng thuốc linh hoạt theo thực tế.
+•	Hỗ trợ các đơn vị như viên, gói, chai và những đơn vị phù hợp với từng dạng sản phẩm.
+•	Tránh yêu cầu người dùng nhập lại thông tin đã có.
+•	Cung cấp thao tác xác nhận nhanh nhưng vẫn đảm bảo lưu dữ liệu chính xác.
+1.3. Nguy cơ mất dữ liệu và lỗi xuất dữ liệu
+Trong một đánh giá CareClinic ngày 15/07/2026, người dùng trả phí cho biết phần lớn nhật ký triệu chứng và thuốc của một năm bị mất, dữ liệu có khoảng trống và chức năng xuất tệp không hoạt động. Phản hồi của nhà phát triển ngày 08/09/2026 xác nhận đây là vấn đề nghiêm trọng cần điều tra.
+Nguồn: https://play.google.com/store/apps/details?id=com.careclinicsoftware.careclinic
+Đây là phản ánh về một trải nghiệm cụ thể, không đủ để kết luận lỗi xảy ra phổ biến đối với toàn bộ người dùng CareClinic.
+Hàm ý đối với sản phẩm:
+•	Xây dựng cơ chế sao lưu và khôi phục dữ liệu.
+•	Có phương án xử lý xung đột khi nhiều thiết bị cập nhật.
+•	Hạn chế mất dữ liệu âm thầm.
+•	Cho phép xuất dữ liệu phù hợp với mục đích quản lý và chia sẻ.
+•	Có thông báo khi quá trình đồng bộ hoặc lưu trữ gặp lỗi.
+1.4. Khó khăn trong quá trình nhập dữ liệu thuốc
+Một đánh giá Pillo trước đợt thiết kế lại ứng dụng phản ánh khó khăn khi nhập thuốc và thiếu chức năng đặt lịch nhắc. Tuy nhiên, phiên bản hiện tại đã công bố tính năng nhắc liều. Vì vậy, đánh giá này chỉ nên được xem là tín hiệu về trải nghiệm phiên bản trước, không phải bằng chứng rằng tính năng hiện đang thiếu.
+Nguồn: https://apps.apple.com/us/app/pillo-pill-reminder-tracker/id6736664288?platform=iphone&see-all=reviews
+Hàm ý đối với sản phẩm:
+•	Thiết kế quy trình nhập thuốc ngắn gọn.
+•	Hỗ trợ chụp ảnh hộp, vỉ hoặc nhãn thuốc để giảm công sức nhập liệu.
+•	Chỉ sử dụng dữ liệu tự nhận diện như thông tin đề xuất; người dùng phải xác nhận tên thuốc, hàm lượng và hạn sử dụng trước khi lưu.
+•	Có phương án nhập thủ công khi ảnh không đủ rõ hoặc hệ thống không xác định được thông tin.
+2. Những khoảng trống cần kiểm chứng tại Việt Nam
+Các nội dung sau được tổng hợp từ tín hiệu nghiên cứu thị trường, bối cảnh lưu trữ thuốc tại nhà và phân tích quy trình sử dụng sản phẩm. Không phải tất cả đều đã được chứng minh trực tiếp bằng đánh giá trên cửa hàng ứng dụng.
+Khoảng trống	Tình huống thực tế	Định hướng giải pháp
+Xác định thuốc thuộc về ai	Nhiều người cùng sử dụng chung tủ thuốc, có nguy cơ nhầm thuốc của người lớn và trẻ em	Phân loại theo thành viên, hiển thị rõ người sử dụng
+Quản lý hạn dùng và thuốc đã mở	Thuốc bị tách khỏi hộp; một số thuốc có thời hạn sử dụng sau mở khác với hạn in trên bao bì	Theo dõi hạn trên bao bì và thông tin sau mở khi có hướng dẫn phù hợp
+Theo dõi số lượng tồn kho	Số thuốc thực tế không khớp dữ liệu do sử dụng một phần hoặc nhập liệu không đầy đủ	Cho phép nhập linh hoạt, kiểm kê và điều chỉnh tồn kho
+Quản lý thuốc tồn dư	Người dùng giữ phần thuốc còn lại để tự sử dụng khi gặp triệu chứng tương tự	Ghi nhận thuốc tồn dư/ngừng dùng; cảnh báo không tự dùng lại thuốc kê đơn khi chưa được đánh giá phù hợp
+Tra cứu thuốc tại Việt Nam	Tên thương mại, hoạt chất, hàm lượng và dạng bào chế khác nhau	Hỗ trợ danh mục tiếng Việt và tìm kiếm theo tên thương mại hoặc hoạt chất
+Phối hợp người chăm sóc	Con cái hỗ trợ cha mẹ lớn tuổi nhưng không phải lúc nào cũng ở cùng nhà	Hồ sơ gia đình, phân quyền và chia sẻ thông tin có kiểm soát
+Điều kiện bảo quản	Thuốc có thể được lưu trữ không phù hợp với hướng dẫn	Lưu thông tin bảo quản từ nhãn/hướng dẫn; nhắc người dùng chú ý khi cần
+Một nghiên cứu trên 800 hộ tại Đà Nẵng ghi nhận 9,4% số hộ lưu trữ thuốc không giữ thuốc trong bao bì thích hợp. Nghiên cứu cũng ghi nhận việc lưu giữ thuốc để sử dụng trong tương lai và tình trạng không kiểm tra hạn dùng thường xuyên.
+Nguồn: https://pmc.ncbi.nlm.nih.gov/articles/PMC10812093/
+Kết quả trên củng cố nhu cầu nghiên cứu tính năng kiểm kê và thông tin bảo quản, nhưng không chứng minh rằng việc triển khai ứng dụng di động tự nó sẽ làm thay đổi hành vi sử dụng thuốc.
+Ngoài ra, các điều kiện bảo quản thuốc có thể khác nhau theo từng sản phẩm, bao gồm yêu cầu về bao bì, nhiệt độ, độ ẩm và việc tránh ánh sáng khi cần. Ứng dụng không được mặc định mọi loại thuốc đều có cùng điều kiện bảo quản, chẳng hạn mặc định tất cả thuốc phải được để trong tủ lạnh.
+Nguồn tham khảo: https://vbpl.moj.gov.vn/boyte/Pages/vbpq-toanvan.aspx?ItemID=24760
+3. Mô hình ba lớp giá trị sản phẩm
+Từ góc độ quản lý sản phẩm, nhu cầu có thể được chia thành ba lớp:
+Lớp 1 – Quản lý tài sản thuốc
+•	Gia đình đang có những thuốc nào?
+•	Thuốc thuộc về ai?
+•	Số lượng còn lại là bao nhiêu?
+•	Thuốc được cất ở đâu?
+•	Hạn sử dụng đến khi nào?
+Lớp 2 – Quản lý quá trình sử dụng
+•	Thuốc nào đến thời điểm cần dùng?
+•	Liều đã được người dùng xác nhận chưa?
+•	Lượng thuốc còn lại có đủ cho lịch dùng hiện tại không?
+•	Trạng thái sử dụng có được ghi nhận chính xác không?
+Lớp 3 – An toàn và phối hợp
+•	Có nguy cơ nhầm người sử dụng hay dùng lại thuốc tồn dư không phù hợp không?
+•	Thông tin quan trọng nào còn thiếu hoặc chưa được xác minh?
+•	Ai được phép xem và cập nhật hồ sơ?
+•	Làm thế nào để phối hợp giữa các thành viên và người chăm sóc?
+Nếu sản phẩm chỉ tập trung vào lớp thứ hai, nó phải cạnh tranh trực tiếp với những ứng dụng nhắc thuốc đã trưởng thành. Việc kết hợp tốt cả ba lớp sẽ làm rõ hơn định vị “Tủ thuốc gia đình”.
+________________________________________
+IV. LỘ TRÌNH PHÁT TRIỂN SẢN PHẨM
+1. Giai đoạn 1 – MVP (Minimum Viable Product)
+1.1. Mục tiêu
+MVP cần giải quyết hoàn chỉnh một quy trình thực tế: người dùng thêm thuốc vào tủ, phân loại người sử dụng, theo dõi tồn kho, nhận nhắc nhở và kiểm tra hạn dùng.
+Nguyên tắc phát triển là hoàn thành tốt chức năng cốt lõi trước khi mở rộng sang các tính năng y tế phức tạp.
+1.2. MVP-01 – Quản lý hộ gia đình và hồ sơ thành viên
+Chức năng:
+•	Tạo hộ gia đình và thêm thành viên như ông bà, cha mẹ và con cái.
+•	Lưu thông tin tối thiểu cần thiết, gồm tên hiển thị, ngày sinh hoặc nhóm tuổi khi phù hợp và ghi chú cần thiết.
+•	Phân biệt thuốc của từng thành viên và thuốc dùng chung.
+•	Xây dựng vai trò quản lý hộ gia đình và thành viên.
+•	Giới hạn quyền xem và chỉnh sửa dữ liệu sức khỏe theo vai trò.
+Tiêu chí nghiệm thu: Hệ thống phải phân biệt rõ thuốc của các thành viên, tránh nhầm lẫn do các loại thuốc cùng được lưu trữ tại một vị trí.
+1.3. MVP-02 – Quản lý kho thuốc
+Thông tin cơ bản của mỗi bản ghi thuốc:
+•	Tên thuốc.
+•	Ảnh nhận diện.
+•	Hàm lượng và dạng bào chế, nếu xác định được.
+•	Thành viên sử dụng.
+•	Số lượng ban đầu và số lượng còn lại.
+•	Đơn vị tính.
+•	Hạn sử dụng trên bao bì.
+•	Ngày mở thuốc khi phù hợp.
+•	Vị trí lưu trữ.
+•	Trạng thái: đang lưu kho, đang sử dụng, tạm ngừng, hết hoặc hết hạn.
+Chức năng quản lý:
+•	Tìm kiếm thuốc.
+•	Lọc theo thành viên, nhóm thuốc, trạng thái và hạn sử dụng.
+•	Cập nhật số lượng.
+•	Điều chỉnh thông tin lưu trữ.
+•	Kiểm kê thuốc trong gia đình.
+Tiêu chí nghiệm thu: Người dùng có thể tìm được một loại thuốc và xác định lượng tồn kho hiện tại mà không phải kiểm tra toàn bộ tủ thuốc.
+1.4. MVP-03 – Lập lịch và nhắc uống thuốc
+Chức năng:
+•	Lưu lịch dùng thuốc do người dùng nhập theo hướng dẫn của bác sĩ hoặc dược sĩ.
+•	Hỗ trợ ngày bắt đầu, ngày kết thúc, thời điểm dùng và lịch lặp.
+•	Gửi thông báo trên thiết bị.
+•	Cho phép ghi nhận đã dùng, bỏ qua hoặc hoãn.
+•	Hiển thị tên thuốc, thành viên sử dụng, thời điểm và thông tin liều đã nhập.
+•	Quản lý thuốc dùng khi cần theo cách riêng, không mặc định rằng chúng có lịch uống cố định.
+Tiêu chí nghiệm thu:
+•	Lịch nhắc không tự thay đổi chỉ định đã nhập.
+•	Trạng thái xác nhận được lưu và xem lại trong lịch sử.
+•	Hệ thống phân biệt được thông báo đã gửi với liều đã được người dùng xác nhận.
+1.5. MVP-04 – Cảnh báo hạn sử dụng và tồn kho thấp
+Chức năng:
+•	Cảnh báo trước hạn dùng theo các mốc có thể cấu hình.
+•	Hiển thị thuốc đã quá hạn và đánh dấu để người dùng kiểm tra, không tiếp tục dùng theo lịch thông thường.
+•	Cảnh báo khi lượng tồn kho xuống dưới ngưỡng người dùng thiết lập.
+•	Cho phép đánh dấu thuốc cần bổ sung.
+•	Hỗ trợ điều chỉnh tồn kho sau kiểm kê.
+Tiêu chí nghiệm thu: Cảnh báo dựa trên dữ liệu đã nhập và không tự giả định hạn sử dụng khi thông tin còn thiếu.
+1.6. MVP-05 – Nhật ký sử dụng và kiểm kê
+Chức năng:
+•	Theo dõi lịch sử dùng, bỏ qua, hoãn và điều chỉnh tồn kho.
+•	Phân biệt lần dùng thuốc đã được người dùng xác nhận với lần chỉ gửi thông báo.
+•	Lưu lịch sử thay đổi số lượng và người thực hiện.
+•	Cung cấp thao tác kiểm kê để điều chỉnh số lượng trong ứng dụng theo số lượng thực tế.
+Tiêu chí nghiệm thu: Có thể truy vết lý do thay đổi số lượng thuốc và tránh việc trừ kho nhiều lần cho cùng một liều.
+1.7. MVP-06 – Bảo mật, sao lưu và ổn định hệ thống
+Chức năng và yêu cầu:
+•	Xác thực và phân quyền phù hợp với mô hình dữ liệu gia đình.
+•	Bảo vệ dữ liệu khi lưu trữ và truyền tải.
+•	Có cơ chế sao lưu, khôi phục và xuất dữ liệu phù hợp.
+•	Xử lý mất kết nối, lỗi lưu dữ liệu và xung đột khi nhiều người cập nhật.
+•	Kiểm tra quyền thông báo và hỗ trợ khắc phục lỗi nhắc thuốc.
+Tiêu chí nghiệm thu: Dữ liệu không bị mất âm thầm; khi xảy ra lỗi lưu trữ hoặc đồng bộ, hệ thống phải có thông báo và phương án xử lý phù hợp.
+2. Phạm vi chưa ưu tiên trong MVP
+Tính năng	Định hướng	Lý do
+Hồ sơ nhiều thành viên	Triển khai trong MVP	Tạo nền tảng cho quản lý thuốc cấp hộ gia đình
+Quản lý tồn kho, hạn dùng và vị trí lưu trữ	Triển khai trong MVP	Là chức năng cốt lõi của tủ thuốc số
+Nhắc thuốc và nhật ký sử dụng	Triển khai trong MVP	Kết nối kho thuốc với quá trình sử dụng
+Nhập thuốc bằng biểu mẫu và ảnh	Triển khai trong MVP	Biểu mẫu bắt buộc; ảnh giúp nhận diện
+OCR tự nhận diện thông tin thuốc	Chưa bắt buộc	Có nguy cơ nhận diện sai tên, hàm lượng hoặc ngày tháng; cần kiểm thử và xác nhận
+Cơ sở dữ liệu tra cứu tương tác thuốc	Chưa bắt buộc	Đòi hỏi nguồn dữ liệu đáng tin cậy và quy trình cập nhật
+Theo dõi huyết áp, đường huyết và cân nặng	Có thể triển khai sau	Không bắt buộc để kiểm chứng giá trị cốt lõi
+AI tư vấn dùng thuốc theo triệu chứng	Không đưa vào MVP	Có rủi ro nếu người dùng xem kết quả như chỉ định y tế
+Kết nối nhà thuốc và mua thuốc trực tuyến	Để giai đoạn sau	Làm tăng độ phức tạp về tích hợp, kinh doanh và an toàn
+Một quyết định kiến trúc cần được xác định sớm là việc đồng bộ dữ liệu giữa nhiều điện thoại. Do sản phẩm hướng đến gia đình nhiều thế hệ, chia sẻ và phân quyền là những năng lực quan trọng. Tuy nhiên, có thể cân nhắc triển khai trước một thiết bị quản lý chính, kết hợp chia sẻ có kiểm soát, sau đó mở rộng đồng bộ đa thiết bị khi nhu cầu đã được xác nhận.
+________________________________________
+V. GIAI ĐOẠN 2 – ADVANCED / DIFFERENTIATORS
+1. Các tính năng khác biệt ưu tiên cao
+1.1. ADV-01 – Quét và nhận diện thuốc thông minh
+Hỗ trợ người dùng chụp vỏ hộp, vỉ thuốc hoặc nhãn thuốc để hệ thống đề xuất thông tin như:
+•	Tên thuốc.
+•	Hàm lượng.
+•	Dạng bào chế.
+•	Nhà sản xuất.
+•	Hạn sử dụng, nếu đọc được.
+Giá trị dự kiến: Giảm công sức nhập liệu, đặc biệt đối với tủ thuốc có nhiều hộp và vỉ thuốc khác nhau.
+Yêu cầu an toàn:
+•	OCR chỉ có vai trò đề xuất thông tin.
+•	Người dùng phải xác nhận các trường quan trọng trước khi lưu.
+•	Không tự đoán thông tin khi ảnh không đủ rõ.
+•	Có phương án nhập thủ công khi không thể nhận diện chính xác.
+1.2. ADV-02 – Chế độ người chăm sóc và phối hợp giữa các thành viên
+Chức năng:
+•	Cho phép nhiều thành viên được quyền quản lý cùng một hồ sơ theo phân quyền.
+•	Gửi thông báo cho người chăm sóc khi có liều cần xác nhận nhưng chưa được xác nhận trong khoảng thời gian thiết lập.
+•	Theo dõi người đã xác nhận, người điều chỉnh lịch và người thay đổi tồn kho.
+•	Cho phép thu hồi quyền chia sẻ và giới hạn phạm vi thông tin được xem.
+Giá trị dự kiến: Hỗ trợ con cái chăm sóc cha mẹ lớn tuổi, vợ/chồng hỗ trợ nhau và gia đình có trẻ cần người lớn quản lý thuốc.
+Điểm cần kiểm soát: Không được kết luận người bệnh đã thực sự uống thuốc chỉ vì thông báo được mở hoặc một người khác nhấn xác nhận.
+1.3. ADV-03 – Quản lý theo lô, lần mở và vòng đời thuốc
+Một loại thuốc có thể được mua nhiều lần, với số lượng và hạn sử dụng khác nhau. Hệ thống nâng cao cần phân biệt từng lô hoặc từng gói thuốc, thay vì áp dụng một hạn dùng cho toàn bộ các sản phẩm cùng tên.
+Chức năng:
+•	Theo dõi hạn dùng từng lô.
+•	Ghi nhận ngày mở khi phù hợp.
+•	Theo dõi thời gian sử dụng sau mở dựa trên hướng dẫn sản phẩm.
+•	Lưu vị trí bảo quản.
+•	Ghi lại lịch sử điều chỉnh số lượng và trạng thái.
+Giá trị dự kiến: Nâng cấp hệ thống từ danh sách thuốc cơ bản thành một công cụ quản lý kho thuốc có khả năng truy vết.
+1.4. ADV-04 – Danh mục thuốc tiếng Việt và tra cứu theo hoạt chất
+Chức năng:
+•	Hỗ trợ tìm kiếm theo tên thương mại và hoạt chất.
+•	Hiển thị hàm lượng, dạng bào chế và hình ảnh nhận diện.
+•	Cung cấp thông tin tham khảo từ nguồn có thể kiểm chứng.
+•	Xử lý trường hợp dữ liệu không đầy đủ hoặc chưa xác định được.
+Giá trị dự kiến: Giảm khó khăn khi người dùng chỉ nhớ hoạt chất hoặc gặp những sản phẩm có tên thương mại khác nhau.
+Điều kiện triển khai:
+•	Có nguồn dữ liệu phù hợp và quyền sử dụng hợp lệ.
+•	Có quy trình cập nhật dữ liệu.
+•	Có cơ chế phát hiện và xử lý thông tin không chắc chắn.
+•	Không tự kết luận hai sản phẩm tương đương chỉ vì tên gọi gần giống nhau.
+2. Các tính năng nâng cao về an toàn thuốc và sức khỏe
+Tính năng	Nội dung	Điều kiện triển khai
+Kiểm tra tương tác thuốc	Đối chiếu thuốc đang sử dụng và cảnh báo một số tương tác đã biết	Cần nguồn dữ liệu rõ ràng, cập nhật, có thông tin về mức độ và giới hạn cảnh báo
+Phát hiện hoạt chất trùng lặp	Cảnh báo khi nhiều sản phẩm có khả năng chứa cùng hoạt chất	Phải xác minh hoạt chất, hàm lượng, dạng bào chế và bối cảnh sử dụng; không tự đề xuất ngừng thuốc
+Nhật ký sức khỏe	Ghi nhận huyết áp, đường huyết, cân nặng và triệu chứng khi cần	Phân biệt dữ liệu tự nhập với dữ liệu từ thiết bị; không tự chẩn đoán
+Báo cáo cho bác sĩ	Xuất danh sách thuốc, lịch sử sử dụng và chỉ số sức khỏe theo khoảng thời gian	Có xác nhận trước khi xuất hoặc chia sẻ và bảo vệ quyền riêng tư
+Nhắc mua bổ sung	Ước tính thời điểm hết thuốc từ tồn kho và lịch sử sử dụng	Cần xét đến thay đổi liều, thuốc dùng khi cần, thất thoát và sai lệch kiểm kê
+Hỗ trợ xử lý thuốc hết hạn	Hiển thị hướng dẫn xử lý và điểm tiếp nhận nếu có dữ liệu đáng tin cậy	Cần thông tin địa phương được kiểm chứng; không mặc định khuyên đổ thuốc vào bồn cầu hoặc thùng rác
+Kiểm tra tương tác thuốc là một hướng có thể tạo khác biệt, nhưng không nên được phát triển bằng cách tự xây dựng hệ thống cảnh báo từ thông tin thu thập rời rạc.
+Nếu triển khai chức năng này, cần có sự tham gia của dược sĩ hoặc chuyên gia phù hợp để xác định nguồn dữ liệu, phạm vi cảnh báo, mức độ nghiêm trọng và quy trình cập nhật. Kết quả phải được trình bày là thông tin hỗ trợ, không phải bằng chứng rằng một phối hợp thuốc chắc chắn an toàn hoặc nguy hiểm.
+3. Những tính năng chưa nên ưu tiên
+Trong các phiên bản đầu, không nên ưu tiên:
+•	AI chẩn đoán bệnh hoặc tự đề xuất thuốc theo triệu chứng.
+•	AI tự đặt hoặc thay đổi liều dùng.
+•	Mạng xã hội sức khỏe, diễn đàn bệnh nhân và hệ thống gamification phức tạp.
+•	Tích hợp quá nhiều thiết bị, nhà thuốc hoặc dịch vụ thanh toán khi chưa chứng minh được nhu cầu.
+Các chức năng trên làm tăng chi phí phát triển, phạm vi kiểm thử và rủi ro vận hành, trong khi chưa chắc cải thiện giá trị cốt lõi của tủ thuốc số.
+________________________________________
+VI. YÊU CẦU ĐẶC THÙ ĐỐI VỚI THỊ TRƯỜNG VIỆT NAM
+1. Thiết kế theo hành vi lưu trữ và sử dụng thuốc thực tế
+Tình huống A – Thuốc đã được tách khỏi hộp
+Người dùng chỉ còn vài viên trong vỉ nhưng hộp ngoài đã bị loại bỏ. Ứng dụng cần cho phép lưu ảnh nhận diện, thông tin đã xác minh và hạn dùng nếu biết. Nếu thiếu thông tin, hệ thống phải hiển thị rõ rằng thông tin chưa được xác định.
+Tình huống B – Nhiều người cùng sử dụng một tủ thuốc
+Người dùng cần xác định loại thuốc thuộc về ai, số lượng còn lại và ai đã cập nhật dữ liệu. Ứng dụng phải phân biệt thuốc theo người sử dụng; việc cùng lưu thuốc trong một tủ không đồng nghĩa với việc các thành viên được phép dùng chung thuốc.
+Tình huống C – Thuốc tồn dư sau điều trị
+Người dùng giữ thuốc còn lại để dành cho lần sau. Ứng dụng có thể ghi nhận trạng thái tồn dư, ngày kết thúc đợt điều trị và nhắc người dùng kiểm tra với nhân viên y tế trước khi sử dụng lại.
+Không được biến số lượng thuốc còn lại thành gợi ý rằng thuốc đó thích hợp cho một triệu chứng mới.
+Tình huống D – Người cao tuổi có nhiều lịch dùng thuốc
+Ứng dụng cần có:
+•	Giao diện chữ lớn và các nút xác nhận rõ ràng.
+•	Lịch hiển thị theo buổi trong ngày.
+•	Quyền hỗ trợ từ người chăm sóc.
+•	Cơ chế khôi phục và xử lý khi thông báo bị tắt hoặc hệ điều hành hạn chế ứng dụng chạy nền.
+2. Ngôn ngữ, đơn vị và thao tác
+Ứng dụng cần được Việt hóa đầy đủ, không chỉ giới hạn ở việc dịch nhãn giao diện.
+Các yêu cầu ưu tiên gồm:
+•	Hỗ trợ nhập và hiển thị ngày tháng theo cách quen thuộc.
+•	Tìm kiếm thuốc bằng tên tiếng Việt hoặc hoạt chất.
+•	Hỗ trợ đơn vị viên, gói, chai và các đơn vị phù hợp với dạng sản phẩm.
+•	Cho phép ghi chú về thời điểm sử dụng hoặc liên quan đến bữa ăn khi phù hợp với hướng dẫn đã được xác nhận.
+Ứng dụng không được tự diễn giải các khái niệm “sáng – trưa – tối” thành liều dùng cố định. Đây chỉ là cách tổ chức thời điểm hiển thị; liều lượng và hướng dẫn điều trị phải được nhập từ nguồn phù hợp.
+3. Bảo mật và bảo vệ dữ liệu sức khỏe
+Bảo mật là yêu cầu nền tảng của sản phẩm, không phải tính năng cao cấp.
+Luật Bảo vệ dữ liệu cá nhân số 91/2025/QH15 có hiệu lực từ ngày 01/01/2026. Nghị định 356/2025/NĐ-CP cũng có hiệu lực từ ngày 01/01/2026, quy định chi tiết việc thực thi luật này.
+Nguồn tham khảo: https://chinhphu.vn/?classid=1&docid=214590&orggroupid=1&pageid=27160
+Các yêu cầu cần đưa vào thiết kế sản phẩm:
+•	Xin sự đồng ý phù hợp khi thu thập và xử lý dữ liệu sức khỏe.
+•	Phân quyền truy cập, giới hạn dữ liệu hiển thị theo vai trò.
+•	Cho phép người dùng quản lý quyền chia sẻ và yêu cầu xử lý dữ liệu theo quy định.
+•	Xây dựng chính sách lưu trữ, sao lưu, xóa dữ liệu và xử lý sự cố.
+•	Chỉ thu thập thông tin thực sự cần thiết cho các chức năng đã công bố.
+Đặc biệt, việc chia sẻ dữ liệu giữa cha mẹ và con cái không đồng nghĩa với việc một người tự động được toàn quyền truy cập hồ sơ của mọi thành viên.
+Dự án cần rà soát các quy định pháp luật hiện hành và xác định cụ thể nghĩa vụ áp dụng theo mô hình thu thập, lưu trữ, chia sẻ và xử lý dữ liệu trước khi triển khai thực tế.
+________________________________________
+VII. LỘ TRÌNH TRIỂN KHAI VÀ KIỂM CHỨNG GIẢ THUYẾT
+1. Bước 1 – Khảo sát và kiểm chứng vấn đề
+Phỏng vấn khoảng 12–15 hộ gia đình có ít nhất hai thế hệ hoặc có thành viên cần chăm sóc thường xuyên.
+Nội dung khảo sát nên tập trung vào:
+•	Cách gia đình hiện đang lưu trữ và kiểm kê thuốc.
+•	Những tình huống thường gây khó khăn.
+•	Tần suất kiểm tra hạn sử dụng.
+•	Cách ghi nhớ lịch dùng thuốc.
+•	Khó khăn khi phối hợp giữa các thành viên.
+•	Mức độ sẵn sàng nhập và cập nhật dữ liệu lên ứng dụng.
+Nên cho người tham gia thực hiện thử việc kiểm kê một phần tủ thuốc thực tế, thay vì chỉ hỏi họ có thích ý tưởng ứng dụng hay không.
+2. Bước 2 – Thiết kế và thử nghiệm MVP
+Triển khai các chức năng cốt lõi gồm:
+•	Hồ sơ gia đình.
+•	Kho thuốc.
+•	Cảnh báo hạn dùng.
+•	Lịch nhắc.
+•	Nhật ký sử dụng.
+Các nội dung cần đo lường:
+•	Thời gian thêm một loại thuốc.
+•	Tỷ lệ nhập đúng các trường quan trọng.
+•	Khả năng tìm lại thuốc sau một thời gian sử dụng.
+•	Mức độ chính xác của tồn kho.
+•	Khả năng hiểu và xử lý cảnh báo.
+3. Bước 3 – Đánh giá sau thử nghiệm
+Đánh giá:
+•	Tỷ lệ người dùng quay lại.
+•	Tỷ lệ thuốc được cập nhật tồn kho.
+•	Độ chính xác của cảnh báo.
+•	Sự cố liên quan đến lịch nhắc.
+•	Mức độ chấp nhận của người chăm sóc.
+•	Các nguyên nhân khiến người dùng ngừng cập nhật dữ liệu.
+4. Bước 4 – Mở rộng khi có bằng chứng
+Chỉ đầu tư mạnh vào OCR, cơ sở dữ liệu thuốc, cảnh báo tương tác và tích hợp nhà thuốc sau khi xác định được những vấn đề gây khó khăn lớn nhất cho nhóm người dùng thử nghiệm.
+5. Các chỉ số đánh giá hiệu quả sản phẩm
+Chỉ số	Mục đích đánh giá
+Tỷ lệ hoàn thành thiết lập hộ gia đình	Đánh giá khả năng bắt đầu sử dụng
+Thời gian thêm thuốc đầu tiên	Đo mức độ thuận tiện của quy trình nhập liệu
+Tỷ lệ thuốc có đủ thông tin quan trọng	Đánh giá chất lượng dữ liệu kho thuốc
+Tỷ lệ quay lại sau 7 ngày và 30 ngày	Kiểm tra khả năng hình thành thói quen sử dụng
+Tỷ lệ cảnh báo được xử lý	Đánh giá mức độ hiểu và phản hồi đối với cảnh báo
+Tỷ lệ sai lệch giữa tồn kho thực tế và ứng dụng	Đánh giá độ tin cậy của chức năng quản lý kho
+Tỷ lệ thông báo được gửi và hiển thị đúng lịch	Đánh giá độ tin cậy kỹ thuật của chức năng nhắc nhở
+Không nên đặt các ngưỡng thành công tùy ý ngay từ đầu. Dự án cần thu thập dữ liệu ở nhóm thử nghiệm, xác định mức cơ sở và đặt mục tiêu phù hợp với hành vi thực tế.
+________________________________________
+VIII. KẾT LUẬN VÀ KHUYẾN NGHỊ
+1. Định hướng chiến lược
+Dựa trên phân tích đối thủ, đánh giá người dùng và bối cảnh lưu trữ thuốc tại Việt Nam, dự án nên ưu tiên bốn định hướng sau:
+Thứ nhất, hoàn thiện chức năng quản lý kho thuốc gia đình. Đây là nền tảng định vị, bao gồm thông tin thuốc, người sử dụng, số lượng, hạn dùng và vị trí lưu trữ.
+Thứ hai, đảm bảo độ tin cậy của lịch nhắc và nhật ký sử dụng. Lịch phải chính xác, trạng thái phải được lưu nhất quán và giao diện cần phù hợp với cả người cao tuổi lẫn người chăm sóc.
+Thứ ba, Việt hóa theo hành vi sử dụng thuốc thực tế. Tập trung vào nhận diện thuốc, đơn vị đóng gói, quản lý nhiều thành viên và theo dõi thuốc tồn dư. Đây là các hướng cần được kiểm chứng trực tiếp tại thị trường Việt Nam.
+Thứ tư, xây dựng niềm tin trước khi mở rộng AI y tế. Ưu tiên độ chính xác dữ liệu, bảo mật, nguồn thông tin có kiểm chứng và khả năng phối hợp với người chăm sóc. Không triển khai chức năng chẩn đoán hoặc gợi ý điều trị thiếu cơ sở.
+2. Quyết định định vị sản phẩm
+Dự án nên được định vị là một Family Medication Management System – Hệ thống quản lý thuốc cấp hộ gia đình, thay vì chỉ là ứng dụng nhắc uống thuốc.
+Lợi thế cạnh tranh dài hạn dự kiến đến từ khả năng:
+•	Giảm công sức quản lý thuốc tại nhà.
+•	Hạn chế nhầm lẫn giữa các thành viên.
+•	Duy trì thông tin tồn kho đáng tin cậy.
+•	Theo dõi hạn sử dụng và thuốc tồn dư.
+•	Hỗ trợ phối hợp giữa người sử dụng và người chăm sóc.
+•	Bảo vệ dữ liệu sức khỏe và cung cấp thông tin có nguồn gốc rõ ràng.
+3. Vấn đề cần kiểm chứng sớm nhất
+Rủi ro quan trọng nhất ở giai đoạn đầu là người dùng không sẵn sàng nhập và cập nhật thông tin thuốc thường xuyên.
+Nếu quy trình nhập liệu tốn nhiều thời gian, các tính năng nâng cao như cảnh báo tự động, báo cáo sức khỏe hoặc AI sẽ khó phát huy giá trị do dữ liệu đầu vào không đầy đủ.
+Vì vậy, ưu tiên đầu tiên của dự án không phải là mở rộng tối đa số lượng tính năng, mà là xác định và giải quyết tốt ba vấn đề: dễ nhập liệu, dễ duy trì cập nhật và đủ tin cậy để sử dụng trong đời sống gia đình.
+Đây là cơ sở để phát triển sản phẩm theo hướng khả thi, có trọng tâm và phù hợp hơn với nhu cầu quản lý thuốc của các hộ gia đình Việt Nam.
+________________________________________
+Lưu ý về phạm vi nghiên cứu: Các số liệu, đánh giá ứng dụng, điểm xếp hạng và nhận định trong báo cáo được giữ theo nội dung rà soát trước đó. Trước khi sử dụng tài liệu cho quyết định đầu tư, công bố chính thức hoặc triển khai sản phẩm, cần kiểm tra lại dữ liệu cửa hàng ứng dụng, nội dung đánh giá, tính năng hiện hành và các quy định pháp luật áp dụng. Những khoảng trống thị trường được nêu trong báo cáo là giả thuyết sản phẩm cần tiếp tục kiểm chứng, không phải tất cả đều đã được chứng minh là nhu cầu phổ biến của người dùng Việt Nam.
+
