@@ -1,17 +1,11 @@
-# thuoc_dau_roi
+# Ứng dụng Quản lý Tủ thuốc Gia đình (Thuốc Đâu Rồi?)
 
-A new Flutter project.
+Đồ án học phần môn học phần mềm.
 
-## Getting Started
+## 📁 Cấu trúc Thư mục
+- `01. Documentation/`: Chứa tài liệu đặc tả (PRD) và Báo cáo (RPT) của đồ án.
+- `src/`: Chứa mã nguồn (Source Code) ứng dụng.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 👥 Thành viên
+- Điêu Thùy Thanh Thảo.
+- Lê Quỳnh Giang.

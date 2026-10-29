@@ -1,0 +1,739 @@
+PRODUCT REQUIREMENTS DOCUMENT (PRD)
+ỨNG DỤNG DI ĐỘNG “THUỐC Ở ĐÂU RỒI?”
+Trạng thái tài liệu: Draft – Bản dự thảo
+Phiên bản: v1.0
+Cập nhật lần cuối: 27/10/2026
+Product Manager: Nhóm dự án FamMed
+Người đóng góp: Nhóm phân tích nghiệp vụ, thiết kế UI/UX, phát triển phần mềm và kiểm thử
+Loại dự án: Đồ án học phần
+Thị trường mục tiêu: Việt Nam
+Nền tảng: Ứng dụng di động; hệ điều hành triển khai cần được xác nhận
+________________________________________
+1. TÓM TẮT ĐIỀU HÀNH (EXECUTIVE SUMMARY)
+Tên sản phẩm: Thuốc ở đâu rồi?
+Tên tiếng Anh: Family Medicine Cabinet / Pill Reminder & Inventory App
+Mã dự án: FamMed
+Problem Statement – Vấn đề cần giải quyết
+Trong các hộ gia đình Việt Nam, việc lưu trữ và quản lý thuốc thường được thực hiện thủ công, phụ thuộc vào trí nhớ hoặc ghi chép rời rạc. Điều này khiến người dùng khó xác định vị trí thuốc, người sử dụng, số lượng còn lại, hạn sử dụng và lịch dùng thuốc, đặc biệt trong gia đình có nhiều thế hệ.
+Việc thiếu một hệ thống quản lý tập trung có thể dẫn đến thất lạc thuốc, nhầm lẫn giữa các thành viên, bỏ sót hạn sử dụng và khó phối hợp giữa những người chăm sóc. Do đó, cần xây dựng một giải pháp giúp số hóa thông tin thuốc và hỗ trợ theo dõi quá trình quản lý thuốc tại nhà.
+Proposed Solution – Giải pháp đề xuất
+“Thuốc ở đâu rồi?” là ứng dụng di động hỗ trợ quản lý tủ thuốc gia đình thông qua ba trụ cột: quản lý kho thuốc, quản lý theo thành viên và nhắc nhở sử dụng thuốc.
+Ứng dụng cho phép người dùng ghi nhận thông tin thuốc, phân loại theo người sử dụng, theo dõi số lượng và hạn sử dụng, thiết lập lịch nhắc, ghi nhận trạng thái sử dụng và nhận cảnh báo khi thuốc sắp hết hạn hoặc tồn kho thấp. Các tính năng nâng cao như nhận diện thuốc bằng hình ảnh, đồng bộ nhiều thiết bị và kiểm tra tương tác thuốc được xem xét triển khai sau khi hoàn thiện MVP.
+Success Metrics – Chỉ số thành công
+Các mục tiêu sau là ngưỡng đề xuất cho giai đoạn thử nghiệm, chưa phải kết quả thực tế:
+•	Tỷ lệ người dùng hoàn thành thiết lập hộ gia đình và thêm ít nhất một thuốc trong 24 giờ đầu đạt tối thiểu 60%.
+•	Thời gian trung vị để thêm thuốc đầu tiên không quá 3 phút khi người dùng đã có sẵn thông tin cần thiết.
+•	Tỷ lệ bản ghi thuốc có đủ các trường thông tin quan trọng đạt tối thiểu 90%.
+•	Độ chính xác tồn kho đạt tối thiểu 90% trong nhóm kiểm thử có đối chiếu với số lượng thực tế.
+•	Cảnh báo hạn dùng và tồn kho phải đạt độ chính xác 100% đối với các trường hợp kiểm thử đã xác định.
+•	Không phát sinh sự cố nghiêm trọng đã xác nhận liên quan đến mất dữ liệu hoặc truy cập dữ liệu trái phép trong giai đoạn thử nghiệm.
+Tỷ lệ duy trì sử dụng sau 7 ngày và 30 ngày sẽ được đo trong pilot; ngưỡng mục tiêu được xác lập sau khi có dữ liệu cơ sở.
+Launch Target – Mốc triển khai mục tiêu
+Mục tiêu là hoàn thiện MVP, thực hiện kiểm thử và trình diễn các luồng nghiệp vụ chính trong phạm vi đồ án học phần. Ngày phát hành hoặc ngày nghiệm thu cụ thể chưa được xác nhận.
+________________________________________
+2. BỐI CẢNH VÀ CƠ SỞ HÌNH THÀNH SẢN PHẨM (BACKGROUND & CONTEXT)
+2.1. Why Now? – Lý do thực hiện dự án
+Nhu cầu quản lý thuốc tại nhà xuất phát từ thực tế các hộ gia đình thường lưu trữ nhiều loại thuốc nhằm phục vụ nhu cầu sử dụng thông thường hoặc các đợt điều trị. Tuy nhiên, các thông tin quan trọng như tên thuốc, người sử dụng, số lượng, hạn dùng và vị trí cất giữ chưa được quản lý tập trung trong nhiều tình huống.
+Một nghiên cứu trên 800 hộ gia đình tại Đà Nẵng ghi nhận:
+•	71,6% số hộ được khảo sát có lưu trữ thuốc tại nhà.
+•	Trong nhóm hộ lưu trữ thuốc, 68,1% giữ thuốc để sử dụng trong tương lai.
+•	Trong nhóm hộ lưu trữ thuốc, 19,4% không kiểm tra hạn sử dụng thường xuyên.
+•	Trong nhóm hộ lưu trữ thuốc, 80,8% có thuốc giảm đau – hạ sốt, là nhóm thuốc phổ biến nhất.
+Nguồn: Nghiên cứu về lưu trữ thuốc tại hộ gia đình ở Đà Nẵng.
+https://pmc.ncbi.nlm.nih.gov/articles/PMC10812093/
+Một nghiên cứu khác trên 997 người đã sử dụng kháng sinh tại Việt Nam ghi nhận 27,3% người tham gia lưu trữ kháng sinh tại nhà để sử dụng sau. Trong nhóm người lưu trữ kháng sinh, 69,1% cho biết nguồn thuốc là phần còn dư từ các đợt điều trị trước.
+Nguồn: https://pmc.ncbi.nlm.nih.gov/articles/PMC12105128/
+Các số liệu này cung cấp tín hiệu về nhu cầu quản lý thuốc tại hộ gia đình. Tuy nhiên, kết quả nghiên cứu tại Đà Nẵng không đại diện tuyệt đối cho toàn quốc; tỷ lệ trong nghiên cứu kháng sinh cũng không được diễn giải thành tỷ lệ của mọi hộ gia đình Việt Nam.
+Bên cạnh nhu cầu thực tế, thị trường đã xuất hiện các ứng dụng như Medisafe, MyTherapy và CareClinic tập trung vào nhắc dùng thuốc, theo dõi sức khỏe và hỗ trợ người chăm sóc. Pillo và HomeMed hướng đến quản lý thuốc tại nhà, trong khi DrugBank là đối thủ tham chiếu đáng chú ý ở Việt Nam nhờ chức năng tra cứu thuốc tiếng Việt.
+Vì vậy, dự án không hướng đến việc tạo thêm một ứng dụng nhắc uống thuốc đơn thuần. Mục tiêu là xây dựng công cụ quản lý thuốc ở cấp hộ gia đình, tập trung vào khả năng tìm kiếm, phân loại, kiểm kê và theo dõi vòng đời thuốc.
+2.2. User Research & Insights – Nghiên cứu và insight người dùng
+Phương pháp nghiên cứu
+Nội dung nghiên cứu ban đầu được xây dựng từ:
+•	Nghiên cứu thứ cấp về lưu trữ và sử dụng thuốc tại Việt Nam.
+•	Phân tích tính năng của các ứng dụng cạnh tranh.
+•	Rà soát các phản hồi người dùng được công bố trên App Store và Google Play.
+•	Phân tích các tình huống sử dụng thuốc thường gặp trong hộ gia đình.
+Tại thời điểm lập PRD, nhóm chưa có kết quả phỏng vấn trực tiếp hoặc khảo sát định lượng riêng cho sản phẩm. Vì vậy, các giả thuyết về người dùng sẽ được tiếp tục kiểm chứng trong giai đoạn Discovery và pilot.
+Các phát hiện chính
+Phát hiện 1 – Khó quản lý thông tin thuốc tập trung
+Người dùng có thể không nhớ chính xác thuốc đang có, vị trí cất giữ, số lượng còn lại hoặc thuốc thuộc về thành viên nào.
+Phát hiện 2 – Khó kiểm soát hạn sử dụng và thuốc tồn dư
+Thuốc có thể được giữ lại sau một đợt điều trị hoặc không được kiểm tra hạn sử dụng thường xuyên. Dự án cần hỗ trợ kiểm kê và cảnh báo dựa trên dữ liệu được nhập hoặc xác minh, không tự suy đoán thông tin còn thiếu.
+Phát hiện 3 – Chất lượng trải nghiệm nhắc nhở là yếu tố quan trọng
+Một số đánh giá được ghi nhận trong đợt rà soát trước phản ánh các vấn đề như lịch thuốc không cập nhật nhất quán, thông báo không hoạt động theo kỳ vọng hoặc thao tác xác nhận quá phức tạp. Đây là các phản ánh cá nhân, không đủ để kết luận rằng mọi người dùng của ứng dụng đều gặp những vấn đề tương tự.
+Phát hiện 4 – Nhập dữ liệu có thể trở thành rào cản sử dụng
+Nếu người dùng phải nhập nhiều thông tin cho mỗi loại thuốc, họ có thể không duy trì cập nhật kho thuốc. Do đó, MVP cần biểu mẫu rõ ràng, trường thông tin hợp lý và thao tác kiểm kê đơn giản.
+Phát hiện 5 – Gia đình cần phối hợp nhưng phải bảo vệ quyền riêng tư
+Việc phân loại thuốc theo thành viên tạo cơ sở để hỗ trợ người chăm sóc. Tuy nhiên, chia sẻ thông tin phải được kiểm soát theo quyền, đặc biệt khi liên quan đến dữ liệu sức khỏe của người cao tuổi và trẻ em.
+User Quotes – Trích dẫn người dùng
+Chưa có trích dẫn nguyên văn từ phỏng vấn người dùng của dự án. Nhóm không sử dụng câu trích dẫn giả định như dữ liệu nghiên cứu thực tế. Các nhận định về hành vi và nhu cầu trong tài liệu hiện tại được xem là giả thuyết cần kiểm chứng.
+2.3. Market Analysis – Phân tích thị trường
+Quy mô thị trường
+Dự án chưa có dữ liệu đáng tin cậy để xác định TAM (Total Addressable Market), SAM (Serviceable Available Market) và SOM (Serviceable Obtainable Market). PRD không đưa ra con số ước tính thị trường khi chưa có cơ sở dữ liệu phù hợp.
+Trong phạm vi đồ án, nghiên cứu tập trung vào vấn đề người dùng, tính năng đối thủ và khả năng tạo ra giải pháp có giá trị thực tiễn cho hộ gia đình Việt Nam.
+Bối cảnh cạnh tranh
+Đối thủ	Nhóm chức năng chính	Điểm mạnh tham chiếu	Khoảng trống cần nghiên cứu
+Medisafe	Nhắc thuốc, ghi nhận liều, hỗ trợ người chăm sóc, theo dõi sức khỏe	Hệ thống quản lý điều trị tương đối toàn diện	Mức độ phù hợp của nhập liệu, dữ liệu và quy trình quản lý kho tại Việt Nam
+MyTherapy	Nhắc thuốc, theo dõi lượng còn lại, nhật ký sức khỏe	Hỗ trợ lịch dùng thuốc và theo dõi sức khỏe	Giảm thao tác cập nhật, hỗ trợ đơn vị đóng gói thực tế
+CareClinic	Theo dõi thuốc, triệu chứng và sức khỏe	Phạm vi quản lý sức khỏe rộng	Đảm bảo trải nghiệm đơn giản cho tác vụ quản lý thuốc hằng ngày
+Pillo	Nhắc thuốc, theo dõi kho và hạn dùng	Tập trung vào quản lý thuốc cá nhân	Nhu cầu quản lý chung cho gia đình nhiều thế hệ
+HomeMed	Danh sách thuốc, số lượng và cảnh báo hạn dùng	Gần với ý tưởng số hóa tủ thuốc	Mức độ phù hợp với ngôn ngữ và thói quen sử dụng tại Việt Nam
+DrugBank	Tra cứu thuốc tiếng Việt, nhắc thuốc	Có lợi thế về ngôn ngữ và tra cứu thông tin	Khả năng quản lý tồn kho cấp hộ gia đình và đồng bộ có phân quyền
+Nguồn đối chiếu:
+•	Medisafe: https://play.google.com/store/apps/details?id=com.medisafe.android.client
+•	MyTherapy: https://play.google.com/store/apps/details?id=eu.smartpatient.mytherapy
+•	CareClinic: https://careclinic.io/medicine-tracker/
+•	Pillo: https://apps.apple.com/vn/app/pillo-pill-reminder-tracker/id6736664288
+•	HomeMed: https://play.google.com/store/apps/details?id=com.devasyainnovation.home_med
+•	DrugBank: https://play.google.com/store/apps/details?id=app.drugbank
+Điểm xếp hạng, số lượt tải và danh sách tính năng của các ứng dụng có thể thay đổi theo thời gian, thị trường và hệ điều hành. Các thông tin này cần được kiểm tra lại trước khi dùng cho quyết định triển khai chính thức.
+Khác biệt của sản phẩm (Differentiation)
+Sản phẩm được định hướng theo quy trình quản lý thuốc ở cấp gia đình:
+Thêm thuốc → Phân loại thành viên → Theo dõi tồn kho → Ghi nhận sử dụng → Cảnh báo và kiểm kê.
+Ba trụ cột sản phẩm bao gồm:
+1.	Quản lý kho thuốc: Biết gia đình đang có thuốc gì, số lượng còn lại, vị trí lưu trữ và hạn dùng.
+2.	Quản lý theo thành viên: Xác định thuốc thuộc về ai, hạn chế nhầm lẫn giữa các thành viên.
+3.	Nhắc nhở sử dụng: Hỗ trợ lịch dùng thuốc, ghi nhận trạng thái và liên kết với tồn kho khi đủ điều kiện.
+Lợi thế dự kiến không nằm ở việc chỉ bổ sung thêm một chức năng nhắc thuốc, mà ở sự kết hợp giữa quản lý tồn kho, quản lý theo thành viên và ghi nhận sử dụng.
+________________________________________
+3. MỤC TIÊU VÀ TIÊU CHÍ THÀNH CÔNG (GOALS & SUCCESS CRITERIA)
+3.1. Business Goals – Mục tiêu dự án
+Do đây là đồ án học phần, mục tiêu được xác định theo giá trị sản phẩm và kết quả học thuật, không phải doanh thu hay tăng trưởng thương mại.
+1.	Xây dựng MVP có thể thực hiện các nghiệp vụ quản lý thuốc gia đình cơ bản từ đầu đến cuối.
+2.	Kiểm chứng giả thuyết rằng phân loại thuốc theo thành viên và theo dõi tồn kho có thể giúp người dùng quản lý tủ thuốc thuận tiện hơn.
+3.	Hoàn thiện tài liệu đặc tả, thiết kế, kiến trúc dữ liệu và kiểm thử để chứng minh tính khả thi của giải pháp.
+4.	Đảm bảo các luồng chức năng được kiểm thử, có tiêu chí nghiệm thu và không chứa lỗi nghiêm trọng chưa xử lý khi trình diễn.
+5.	Tạo nền tảng kiến trúc có thể mở rộng sang các chức năng Advanced nếu kết quả thử nghiệm chứng minh được nhu cầu.
+3.2. User Goals – Mục tiêu người dùng
+1.	Tìm được loại thuốc cần thiết và xác định vị trí lưu trữ đã ghi nhận.
+2.	Biết thuốc thuộc về thành viên nào, còn bao nhiêu và khi nào cần kiểm tra hạn sử dụng.
+3.	Thiết lập lịch nhắc dựa trên hướng dẫn phù hợp, ghi nhận trạng thái sử dụng và xem lại lịch sử.
+4.	Giảm thời gian kiểm kê và cập nhật thông tin thuốc.
+5.	Hỗ trợ người chăm sóc theo dõi thông tin cần thiết mà không mặc định họ có toàn quyền truy cập dữ liệu của mọi thành viên.
+3.3. Success Metrics (Detailed) – Chỉ số thành công chi tiết
+Chỉ số	Baseline	Target	Timeframe	Measurement Method
+Activation Rate	Chưa đo	≥ 60%	Trong 24 giờ đầu sau đăng ký/tham gia thử nghiệm	Tỷ lệ người dùng hoàn tất hồ sơ hộ gia đình và thêm ít nhất một thuốc
+First Medicine Entry Time	Chưa đo	Trung vị ≤ 3 phút	Trong thử nghiệm MVP	Đo thời gian từ khi bắt đầu thêm thuốc đến khi lưu thành công
+Critical Data Completeness	Chưa đo	≥ 90%	Cuối pilot	Tỷ lệ bản ghi có đủ tên thuốc, người sử dụng, số lượng và trạng thái xác định hạn dùng
+D7 Retention	Chưa đo	Theo dõi và xác lập sau pilot	Sau 7 ngày	Tỷ lệ người dùng đã kích hoạt quay lại ứng dụng
+D30 Retention	Chưa đo	Theo dõi và xác lập sau pilot	Sau 30 ngày	Tỷ lệ người dùng đã kích hoạt quay lại ứng dụng
+Inventory Accuracy	Chưa đo	≥ 90%	Trong pilot	Đối chiếu bản ghi tồn kho với số lượng kiểm kê thực tế
+Alert Accuracy	Chưa đo	100% đối với bộ kiểm thử đã xác định	QA và pilot	Đối chiếu thời điểm/trạng thái cảnh báo với dữ liệu đầu vào và quy tắc cấu hình
+Reminder Scheduling Reliability	Chưa đo	≥ 98% trong môi trường kiểm thử được xác định	QA	Tỷ lệ lịch nhắc hợp lệ được lập lịch thành công; không đồng nghĩa với tỷ lệ thông báo luôn hiển thị trên mọi thiết bị
+Critical Data Loss / Security Incident	Chưa đo	0 sự cố nghiêm trọng đã xác nhận	Toàn bộ pilot	Tổng hợp báo cáo lỗi, log hệ thống và sự cố đã xác nhận
+Các ngưỡng mục tiêu là đề xuất ban đầu, cần được rà soát sau thử nghiệm. Đối với đồ án, dữ liệu thử nghiệm có thể chưa đủ lớn để đưa ra kết luận thống kê về hành vi người dùng toàn thị trường.
+3.4. Non-Goals (Out of Scope) – Những nội dung không thuộc phạm vi MVP
+•	Không chẩn đoán bệnh hoặc đưa ra phác đồ điều trị.
+•	Không tự đề xuất, tăng, giảm hoặc thay đổi liều thuốc.
+•	Không kết luận người dùng đã thực sự uống thuốc chỉ vì thông báo được gửi hoặc nút xác nhận được nhấn.
+•	Không tự động mua thuốc hoặc kết nối thanh toán trực tuyến.
+•	Không triển khai OCR hoàn toàn tự động mà không có bước xác nhận của người dùng.
+•	Không triển khai hệ thống kiểm tra tương tác thuốc toàn diện khi chưa có nguồn dữ liệu và quy trình chuyên môn phù hợp.
+•	Không triển khai mạng xã hội, diễn đàn sức khỏe hoặc gamification phức tạp.
+•	Không mặc định mọi loại thuốc có cùng điều kiện bảo quản hoặc thời hạn sử dụng sau mở.
+•	Không khẳng định ứng dụng có thể thay thế bác sĩ, dược sĩ hoặc việc kiểm kê thực tế.
+________________________________________
+4. CHÂN DUNG NGƯỜI DÙNG VÀ KỊCH BẢN (USER PERSONAS & USE CASES)
+4.1. Primary Persona: Người chăm sóc gia đình
+•	Vai trò: Người quản lý hoặc hỗ trợ quản lý thuốc của gia đình.
+•	Mục tiêu: Biết thuốc nào đang có, thuộc về ai, số lượng còn lại và khi nào cần kiểm tra hoặc bổ sung.
+•	Điểm đau: Thông tin thuốc phân tán; khó theo dõi nhiều thành viên; mất thời gian kiểm tra từng hộp; không biết tồn kho thực tế có khớp dữ liệu hay không.
+•	Mức độ thành thạo công nghệ: Trung bình; có thể sử dụng các ứng dụng di động phổ biến nhưng không muốn thực hiện quá nhiều thao tác.
+•	Bối cảnh sử dụng: Khi mua thuốc, sắp xếp tủ thuốc, kiểm kê định kỳ hoặc hỗ trợ người thân sử dụng thuốc theo lịch.
+•	Giá trị sản phẩm: Một danh sách thuốc tập trung, phân loại theo thành viên, có cảnh báo và lịch sử thay đổi.
+4.2. Secondary Persona: Người cao tuổi sử dụng thuốc thường xuyên
+•	Vai trò: Người trực tiếp sử dụng thuốc, có thể cần hỗ trợ từ người thân.
+•	Mục tiêu: Xem được lịch dùng thuốc, nhận thông báo dễ hiểu và tránh nhầm lẫn thuốc của bản thân với thuốc của người khác.
+•	Điểm đau: Có thể khó ghi nhớ nhiều lịch dùng; gặp khó khăn với chữ nhỏ, màn hình phức tạp hoặc việc tự cập nhật dữ liệu.
+•	Mức độ thành thạo công nghệ: Cơ bản đến trung bình, tùy từng người.
+•	Bối cảnh sử dụng: Xem thông báo, tra cứu thuốc và xác nhận trạng thái dùng thuốc trong sinh hoạt hằng ngày.
+•	Giá trị sản phẩm: Giao diện rõ ràng, chữ dễ đọc, nút xác nhận dễ thao tác và khả năng được hỗ trợ trong phạm vi quyền cho phép.
+4.3. Secondary Persona: Người trưởng thành bận rộn
+•	Vai trò: Người tự quản lý thuốc hoặc vật dụng y tế tại nhà.
+•	Mục tiêu: Tìm thuốc nhanh, nhớ lịch cần thiết và theo dõi thuốc sắp hết hoặc hết hạn.
+•	Điểm đau: Không nhớ số lượng thuốc còn lại; quên hạn sử dụng; không muốn ghi chép thủ công.
+•	Mức độ thành thạo công nghệ: Trung bình đến cao.
+•	Bối cảnh sử dụng: Khi cần tìm thuốc, cập nhật số lượng hoặc kiểm tra tủ thuốc vào cuối tuần.
+•	Giá trị sản phẩm: Thao tác nhập nhanh, tìm kiếm tiện lợi và cảnh báo được cấu hình theo nhu cầu.
+4.4. Key Use Cases – Các kịch bản sử dụng chính
+Use Case 1: Thêm một loại thuốc vào kho
+Actor: Người chăm sóc gia đình hoặc người quản lý tủ thuốc.
+Preconditions:
+•	Người dùng đã vào được ứng dụng và có quyền quản lý kho.
+•	Thông tin cơ bản của thuốc có sẵn hoặc người dùng có thể nhập thủ công.
+Flow:
+1.	Người dùng mở màn hình Kho thuốc và chọn “Thêm thuốc”.
+2.	Hệ thống hiển thị biểu mẫu nhập thông tin.
+3.	Người dùng nhập tên thuốc, thành viên sử dụng, số lượng, đơn vị và hạn dùng nếu biết.
+4.	Hệ thống kiểm tra dữ liệu và hiển thị lỗi nếu thông tin không hợp lệ.
+5.	Người dùng xác nhận lưu.
+6.	Hệ thống tạo bản ghi và hiển thị thuốc trong danh sách.
+Expected Outcome: Thuốc được lưu với thông tin chính xác theo dữ liệu người dùng cung cấp.
+Edge Cases:
+•	Thiếu hạn sử dụng: cho phép lưu với trạng thái “Chưa xác định” khi phù hợp.
+•	Số lượng không hợp lệ: yêu cầu sửa trước khi lưu.
+•	Trùng tên thuốc: hiển thị các bản ghi có thể liên quan để người dùng lựa chọn, không tự gộp.
+Use Case 2: Nhận và xác nhận lịch nhắc
+Actor: Người sử dụng thuốc.
+Preconditions:
+•	Thuốc đã được tạo trong kho.
+•	Lịch dùng được thiết lập dựa trên hướng dẫn phù hợp.
+•	Thiết bị có cấu hình thông báo cần thiết.
+Flow:
+1.	Đến thời điểm đã lập lịch, hệ thống tạo thông báo nhắc.
+2.	Người dùng mở thông báo hoặc vào màn hình lịch dùng.
+3.	Hệ thống hiển thị thuốc và thông tin liều đã nhập.
+4.	Người dùng chọn “Đã dùng”, “Hoãn” hoặc “Bỏ qua”.
+5.	Hệ thống lưu trạng thái, thời điểm thao tác và lịch sử.
+6.	Hệ thống cập nhật tồn kho nếu có quy tắc tiêu thụ hợp lệ và sự kiện chưa được xử lý trước đó.
+Expected Outcome: Trạng thái được ghi nhận đúng, có thể truy xuất trong lịch sử.
+Edge Cases:
+•	Thông báo bị tắt: ứng dụng hướng dẫn người dùng kiểm tra quyền thông báo.
+•	Lịch thay đổi: cập nhật các thông báo liên quan.
+•	Người dùng không xác nhận: trạng thái được giữ là chưa xác nhận, không tự kết luận đã bỏ liều.
+•	Không được tự đề xuất uống bù hoặc thay đổi liều.
+Use Case 3: Kiểm tra thuốc sắp hết hạn
+Actor: Người chăm sóc gia đình.
+Preconditions:
+•	Thuốc có hạn sử dụng đã được nhập hoặc xác minh.
+•	Quy tắc cảnh báo đã được cấu hình.
+Flow:
+1.	Hệ thống kiểm tra hạn sử dụng theo dữ liệu đã lưu.
+2.	Hệ thống hiển thị cảnh báo đối với các bản ghi đạt điều kiện.
+3.	Người dùng mở chi tiết thuốc.
+4.	Người dùng đối chiếu thông tin và kiểm tra tình trạng thực tế.
+5.	Người dùng đánh dấu đã kiểm tra, cập nhật thông tin hoặc loại thuốc khỏi danh sách đang lưu trữ.
+Expected Outcome: Người dùng xác định được thuốc cần kiểm tra và cập nhật trạng thái phù hợp.
+Edge Cases:
+•	Hạn sử dụng chưa xác định: không tạo cảnh báo ngày hết hạn giả định.
+•	Ngày nhập sai: cho phép cập nhật và tính lại cảnh báo.
+•	Thuốc đã hết hạn: đánh dấu cần xử lý, không tiếp tục đưa thuốc vào lịch dùng thông thường.
+Use Case 4: Tìm thuốc trong tủ
+Actor: Người trưởng thành bận rộn hoặc người chăm sóc.
+Preconditions:
+•	Thuốc đã được ghi nhận trong ứng dụng.
+•	Người dùng có quyền xem bản ghi.
+Flow:
+1.	Người dùng mở Kho thuốc.
+2.	Người dùng nhập tên thuốc hoặc áp dụng bộ lọc thành viên.
+3.	Hệ thống trả về các bản ghi phù hợp.
+4.	Người dùng mở chi tiết thuốc.
+5.	Hệ thống hiển thị vị trí lưu trữ, người sử dụng, số lượng và hạn dùng đã ghi nhận.
+Expected Outcome: Người dùng tìm được bản ghi phù hợp và biết vị trí đã được lưu trong ứng dụng.
+Edge Cases:
+•	Không có kết quả: hiển thị trạng thái không tìm thấy và tùy chọn thêm mới.
+•	Có nhiều bản ghi tên gần giống nhau: hiển thị thông tin phân biệt, không tự xác định thuốc tương đương.
+________________________________________
+5. YÊU CẦU SẢN PHẨM (PRODUCT REQUIREMENTS)
+5.1. Functional Requirements – Yêu cầu chức năng
+Must Have (P0) – MVP
+1. Quản lý hồ sơ gia đình và thành viên
+•	Mô tả: Cho phép tạo hồ sơ hộ gia đình và thêm các thành viên để phân loại thuốc.
+•	User Story: Là người quản lý tủ thuốc, tôi muốn thêm thành viên để biết thuốc nào thuộc về ai.
+•	Acceptance Criteria:
+o	Người dùng có thể tạo hồ sơ hộ gia đình khi nhập đủ dữ liệu bắt buộc.
+o	Người dùng có thể thêm, sửa và ngừng theo dõi thành viên.
+o	Thuốc có thể được liên kết với một thành viên hoặc trạng thái dùng chung phù hợp.
+o	Danh sách thuốc có thể lọc theo thành viên.
+o	Không tự động xóa lịch sử thuốc khi một thành viên ngừng được theo dõi.
+2. Quản lý kho thuốc
+•	Mô tả: Cho phép thêm, xem, sửa và ngừng theo dõi thuốc trong gia đình.
+•	User Story: Là người quản lý, tôi muốn số hóa thông tin thuốc để biết gia đình đang có gì và còn bao nhiêu.
+•	Acceptance Criteria:
+o	Mỗi bản ghi lưu tên thuốc, thành viên sử dụng, số lượng và đơn vị.
+o	Hệ thống hỗ trợ ảnh nhận diện, hàm lượng, dạng bào chế, hạn dùng và vị trí lưu trữ khi có dữ liệu.
+o	Các trường bắt buộc được kiểm tra trước khi lưu.
+o	Người dùng có thể sửa thông tin đã lưu.
+o	Số lượng phải là giá trị hợp lệ và không được âm.
+o	Thông tin chưa xác định phải được thể hiện rõ, không tự suy đoán.
+3. Tìm kiếm và lọc thuốc
+•	Mô tả: Cho phép tìm thuốc theo tên và lọc theo thành viên, trạng thái hoặc hạn dùng.
+•	User Story: Là người dùng, tôi muốn tìm thuốc nhanh để giảm thời gian kiểm tra tủ thuốc thực tế.
+•	Acceptance Criteria:
+o	Người dùng có thể tìm kiếm theo tên thuốc.
+o	Người dùng có thể lọc danh sách theo thành viên.
+o	Danh sách hỗ trợ lọc theo trạng thái và hạn dùng khi dữ liệu có sẵn.
+o	Khi không có kết quả, hệ thống hiển thị trạng thái rõ ràng.
+o	Kết quả tìm kiếm không tự kết luận những thuốc tên gần giống là tương đương.
+4. Lập lịch và nhắc sử dụng thuốc
+•	Mô tả: Cho phép tạo lịch dùng thuốc và nhận thông báo theo cấu hình.
+•	User Story: Là người sử dụng, tôi muốn được nhắc theo lịch đã nhập để không phải tự ghi nhớ toàn bộ thời điểm dùng thuốc.
+•	Acceptance Criteria:
+o	Lịch được liên kết với thuốc và thành viên tương ứng.
+o	Hệ thống hỗ trợ ngày bắt đầu, ngày kết thúc nếu có, thời điểm và quy tắc lặp.
+o	Người dùng có thể chỉnh sửa hoặc tạm ngừng lịch.
+o	Khi quyền thông báo bị tắt, ứng dụng hiển thị hướng dẫn.
+o	Khi lịch bị thay đổi hoặc xóa, các thông báo tương ứng phải được cập nhật.
+o	Hệ thống không tự ý thay đổi liều hoặc chỉ định.
+o	Ứng dụng không cam kết thông báo luôn hiển thị trong mọi điều kiện hệ điều hành.
+5. Ghi nhận sử dụng và cập nhật tồn kho
+•	Mô tả: Ghi nhận trạng thái dùng thuốc và liên kết với lịch sử tồn kho khi có đủ thông tin.
+•	User Story: Là người quản lý, tôi muốn số lượng thuốc phản ánh quá trình sử dụng để hạn chế sai lệch.
+•	Acceptance Criteria:
+o	Người dùng có thể ghi nhận “Đã dùng”, “Hoãn” hoặc “Bỏ qua”.
+o	Hệ thống lưu trạng thái và thời điểm thao tác.
+o	Thông báo được gửi không được coi là bằng chứng thuốc đã được sử dụng.
+o	Việc xác nhận chỉ trừ tồn kho khi có quy tắc đơn vị hợp lệ và tính năng được cấu hình.
+o	Một sự kiện xác nhận không được làm giảm tồn kho nhiều lần.
+o	Người dùng có thể kiểm kê và điều chỉnh sai lệch.
+6. Cảnh báo hạn sử dụng và tồn kho thấp
+•	Mô tả: Cung cấp cảnh báo dựa trên dữ liệu hạn dùng và ngưỡng tồn kho đã cấu hình.
+•	User Story: Là người chăm sóc, tôi muốn biết thuốc nào cần kiểm tra hoặc bổ sung.
+•	Acceptance Criteria:
+o	Người dùng có thể xem danh sách thuốc sắp hết hạn.
+o	Thuốc đã hết hạn được phân loại rõ.
+o	Người dùng có thể thiết lập ngưỡng tồn kho thấp cho từng bản ghi.
+o	Cảnh báo được cập nhật khi dữ liệu thay đổi.
+o	Hệ thống không tự gán hạn dùng cho thuốc chưa có dữ liệu.
+o	Cảnh báo quản lý không được trình bày như một chỉ định y tế.
+7. Nhật ký và kiểm kê
+•	Mô tả: Lưu lịch sử thay đổi số lượng và các thao tác quan trọng.
+•	User Story: Là người quản lý, tôi muốn biết vì sao tồn kho thay đổi để đối chiếu với thực tế.
+•	Acceptance Criteria:
+o	Hệ thống lưu các thay đổi tồn kho có liên quan.
+o	Lịch sử phân biệt sử dụng thuốc, kiểm kê và điều chỉnh thủ công.
+o	Có thể xem lại các lần xác nhận sử dụng theo ngày.
+o	Các thay đổi phải nhất quán với dữ liệu hiện tại.
+o	Thao tác thất bại không được tạo bản ghi thành công giả.
+8. Bảo vệ và khôi phục dữ liệu
+•	Mô tả: Đảm bảo dữ liệu được lưu trữ theo phương án kiến trúc được phê duyệt và có cơ chế phục hồi phù hợp.
+•	User Story: Là người dùng, tôi muốn dữ liệu thuốc không bị mất âm thầm khi xảy ra lỗi.
+•	Acceptance Criteria:
+o	Hệ thống có phương án sao lưu và khôi phục được kiểm thử.
+o	Quyền xem và chỉnh sửa dữ liệu được kiểm soát.
+o	Thao tác lưu thất bại phải có phản hồi rõ ràng.
+o	Việc xuất dữ liệu, nếu được triển khai, phải tuân thủ quyền truy cập.
+o	Các trường hợp lỗi lưu trữ và đồng bộ phải có phương án xử lý.
+Should Have (P1) – Post-Launch / Advanced
+1. OCR hỗ trợ nhập thuốc
+•	Mô tả: Sử dụng hình ảnh hộp, vỉ hoặc nhãn thuốc để đề xuất thông tin nhập liệu.
+•	User Story: Là người quản lý, tôi muốn giảm công sức nhập thông tin thuốc.
+•	Acceptance Criteria:
+o	Người dùng có thể chụp hoặc chọn ảnh.
+o	Hệ thống hiển thị các trường nhận diện dưới dạng đề xuất.
+o	Người dùng phải xác nhận các trường quan trọng trước khi lưu.
+o	Khi ảnh không rõ, hệ thống yêu cầu nhập thủ công thay vì đoán.
+2. Đồng bộ nhiều thiết bị và chia sẻ với người chăm sóc
+•	Mô tả: Cho phép thành viên được cấp quyền truy cập dữ liệu trong phạm vi cho phép.
+•	User Story: Là người chăm sóc, tôi muốn hỗ trợ quản lý thuốc từ thiết bị của mình.
+•	Acceptance Criteria:
+o	Chủ thể quản lý có thể cấp và thu hồi quyền phù hợp.
+o	Người không có quyền không thể chỉnh sửa hồ sơ.
+o	Các thay đổi đồng bộ được xử lý nhất quán.
+o	Xung đột dữ liệu có cơ chế giải quyết.
+o	Hệ thống phân biệt trạng thái chưa xác nhận với trạng thái đã xác nhận sử dụng.
+3. Quản lý theo lô và ngày mở thuốc
+•	Mô tả: Theo dõi các lô thuốc khác nhau, ngày mở và thông tin sau mở khi có hướng dẫn phù hợp.
+•	User Story: Là người quản lý, tôi muốn phân biệt các lô của cùng một loại thuốc để tránh áp dụng sai hạn dùng.
+•	Acceptance Criteria:
+o	Mỗi lô được nhận diện bằng bản ghi riêng khi chức năng được triển khai.
+o	Hạn dùng của lô này không tự áp dụng cho lô khác.
+o	Thông tin sau mở chỉ được sử dụng khi có nguồn phù hợp.
+o	Hệ thống không tự suy đoán thời hạn sau mở.
+4. Danh mục thuốc tiếng Việt và tra cứu theo hoạt chất
+•	Mô tả: Hỗ trợ tra cứu theo tên thương mại, hoạt chất, hàm lượng và dạng bào chế.
+•	User Story: Là người dùng, tôi muốn tìm thuốc bằng thông tin mình đang có.
+•	Acceptance Criteria:
+o	Có thể tìm theo các trường được hỗ trợ.
+o	Thông tin hiển thị có nguồn tham chiếu rõ ràng.
+o	Kết quả chưa chắc chắn được đánh dấu phù hợp.
+o	Không tự kết luận hai thuốc tương đương chỉ vì tên gần giống.
+Nice to Have (P2) – Future Consideration
+1. Kiểm tra tương tác và hoạt chất trùng lặp
+•	Mô tả: Đối chiếu thông tin thuốc để hỗ trợ nhận biết một số tương tác hoặc hoạt chất trùng lặp đã biết.
+•	User Story: Là người quản lý, tôi muốn nhận biết thông tin cần trao đổi thêm với nhân viên y tế.
+•	Acceptance Criteria:
+o	Sử dụng nguồn dữ liệu có nguồn gốc và quy trình cập nhật rõ ràng.
+o	Hiển thị giới hạn và nguồn tham chiếu của cảnh báo.
+o	Không tự đề xuất ngừng thuốc hoặc thay đổi liều.
+o	Cần rà soát chuyên môn trước khi phát hành.
+2. Theo dõi chỉ số sức khỏe và báo cáo
+•	Mô tả: Hỗ trợ ghi nhận huyết áp, đường huyết, cân nặng hoặc triệu chứng theo nhu cầu.
+•	User Story: Là người chăm sóc, tôi muốn tổng hợp một số dữ liệu sức khỏe để trao đổi với nhân viên y tế.
+•	Acceptance Criteria:
+o	Phân biệt dữ liệu người dùng tự nhập với dữ liệu lấy từ thiết bị.
+o	Người dùng có thể chọn khoảng thời gian báo cáo.
+o	Dữ liệu chỉ được chia sẻ theo quyền phù hợp.
+o	Báo cáo không tự đưa ra chẩn đoán.
+3. Hỗ trợ tìm điểm tiếp nhận thuốc hết hạn
+•	Mô tả: Cung cấp thông tin địa điểm xử lý thuốc khi có nguồn dữ liệu phù hợp.
+•	User Story: Là người quản lý, tôi muốn tìm hướng dẫn xử lý thuốc không còn sử dụng.
+•	Acceptance Criteria:
+o	Thông tin địa điểm hoặc hướng dẫn phải được xác minh.
+o	Hệ thống không tự đưa ra hướng dẫn xử lý khi chưa có cơ sở.
+o	Không mặc định khuyên đổ thuốc vào bồn cầu hoặc bỏ vào thùng rác.
+5.2. Non-Functional Requirements – Yêu cầu phi chức năng
+Performance – Hiệu năng
+•	Màn hình danh sách thuốc cần phản hồi trong khoảng 2 giây trở xuống trong điều kiện kiểm thử được xác định, với bộ dữ liệu mẫu tối đa 500 bản ghi thuốc.
+•	Nếu sử dụng API, mục tiêu phản hồi đề xuất là dưới 500 ms ở phân vị 95 đối với các truy vấn thông thường trong môi trường kiểm thử.
+•	Thao tác tìm kiếm và lọc phải phản hồi phù hợp với quy mô dữ liệu của đồ án.
+•	Các mục tiêu hiệu năng cần được đo trên thiết bị và môi trường triển khai cụ thể; không được xem là cam kết cho mọi thiết bị.
+Security & Privacy – Bảo mật và quyền riêng tư
+•	Có cơ chế xác thực phù hợp với kiến trúc được chọn.
+•	Kiểm soát quyền đọc và chỉnh sửa dữ liệu theo vai trò.
+•	Không lưu trữ thông tin xác thực dưới dạng văn bản thuần.
+•	Bảo vệ dữ liệu khi truyền và lưu trữ theo thiết kế bảo mật.
+•	Hạn chế thu thập dữ liệu cá nhân không cần thiết.
+•	Có chính sách lưu trữ, sao lưu, khôi phục, xuất và xóa dữ liệu phù hợp.
+•	Thực hiện rà soát pháp lý theo Luật Bảo vệ dữ liệu cá nhân số 91/2025/QH15 và các văn bản hướng dẫn có liên quan trước khi phát hành.
+•	Không sử dụng dữ liệu sức khỏe cho mục đích không được thông báo hoặc không có cơ sở xử lý phù hợp.
+Scalability – Khả năng mở rộng
+•	Thiết kế các thành phần quản lý hộ gia đình, thành viên, thuốc, lịch nhắc và tồn kho thành các module có ranh giới rõ ràng.
+•	Không cần tối ưu cho quy mô thương mại lớn trong MVP, nhưng cần tránh phụ thuộc cứng vào một luồng nghiệp vụ duy nhất.
+•	Có khả năng bổ sung đồng bộ đa thiết bị, OCR và danh mục thuốc mà không phải thay đổi toàn bộ nghiệp vụ cốt lõi.
+•	Quy mô người dùng đồng thời cần được xác định theo kiến trúc và nguồn lực đồ án; chưa có cơ sở cam kết một ngưỡng sản xuất cụ thể.
+Accessibility – Khả năng tiếp cận
+•	Thiết kế hướng đến nguyên tắc dễ đọc, dễ thao tác và tương phản rõ.
+•	Sử dụng kích thước chữ phù hợp, đặc biệt với người cao tuổi.
+•	Không chỉ dùng màu sắc để biểu thị trạng thái quan trọng.
+•	Các trường nhập liệu cần có nhãn rõ ràng và thông báo lỗi dễ hiểu.
+•	Hỗ trợ công nghệ trợ năng của hệ điều hành trong phạm vi nền tảng được chọn.
+•	Hướng đến các nguyên tắc WCAG 2.2 mức AA khi phù hợp với giao diện ứng dụng di động.
+Browser/Platform Support – Nền tảng
+•	Sản phẩm được định hướng là ứng dụng di động.
+•	Android, iOS hoặc cả hai cần được xác nhận trước khi khóa Tech Stack.
+•	Các yêu cầu về phiên bản hệ điều hành tối thiểu phải được xác định sau khi chọn công nghệ.
+•	Các giới hạn thông báo, quyền truy cập hình ảnh và chạy nền phải được kiểm thử trên nền tảng mục tiêu.
+•	MVP không yêu cầu trình duyệt hoặc bảng điều khiển web riêng, trừ khi nhóm dự án quyết định bổ sung vào phạm vi.
+________________________________________
+6. TRẢI NGHIỆM NGƯỜI DÙNG VÀ THIẾT KẾ (USER EXPERIENCE & DESIGN)
+6.1. User Flow Diagram – Sơ đồ luồng người dùng
+Luồng 1: Thêm thuốc vào kho
+flowchart TD
+    A["Mở ứng dụng"] --> B["Kho thuốc"]
+    B --> C["Thêm thuốc"]
+    C --> D["Nhập thông tin"]
+    D --> E["Chọn thành viên"]
+    E --> F["Nhập số lượng và hạn dùng"]
+    F --> G{"Dữ liệu hợp lệ?"}
+    G -- "Không" --> H["Thông báo lỗi"]
+    H --> D
+    G -- "Có" --> I["Xác nhận lưu"]
+    I --> J["Lưu bản ghi"]
+    J --> K["Hiển thị chi tiết thuốc"]
+Luồng 2: Nhận nhắc và ghi nhận sử dụng
+flowchart TD
+    A["Đến thời điểm đã lập lịch"] --> B["Gửi thông báo"]
+    B --> C["Người dùng mở thông báo"]
+    C --> D["Xem thuốc và thông tin đã nhập"]
+    D --> E{"Chọn trạng thái"}
+    E -- "Đã dùng" --> F["Ghi nhận sử dụng"]
+    E -- "Hoãn" --> G["Thiết lập thời điểm nhắc lại"]
+    E -- "Bỏ qua" --> H["Ghi nhận bỏ qua"]
+    F --> I["Cập nhật lịch sử"]
+    G --> I
+    H --> I
+    I --> J["Cập nhật tồn kho nếu đủ điều kiện"]
+Luồng 3: Xử lý cảnh báo hạn sử dụng
+flowchart TD
+    A["Mở màn hình cảnh báo"] --> B["Xem thuốc cần kiểm tra"]
+    B --> C["Mở chi tiết thuốc"]
+    C --> D["Đối chiếu hạn sử dụng"]
+    D --> E{"Kết quả"}
+    E -- "Thông tin đúng" --> F["Đánh dấu đã kiểm tra"]
+    E -- "Thông tin sai" --> G["Cập nhật dữ liệu"]
+    E -- "Đã hết hạn" --> H["Đánh dấu cần xử lý"]
+    F --> I["Cập nhật trạng thái"]
+    G --> I
+    H --> I
+6.2. Wireframes/Mockups – Định hướng khung giao diện
+Màn hình Tổng quan
++--------------------------------------+
+| Thuốc ở đâu rồi?                     |
+| Hộ gia đình: Nhà mình                |
++--------------------------------------+
+| TỔNG QUAN                            |
+| Thuốc trong kho: [Số lượng]          |
+| Cảnh báo cần kiểm tra: [Số lượng]    |
++--------------------------------------+
+| LỊCH DÙNG SẮP TỚI                    |
+| [Giờ] - [Tên thuốc] - [Thành viên]   |
+| [Xem lịch]                           |
++--------------------------------------+
+| CẢNH BÁO                             |
+| [Thuốc sắp hết hạn]                  |
+| [Thuốc tồn kho thấp]                 |
++--------------------------------------+
+| [Kho thuốc] [Thêm thuốc]             |
+| [Lịch nhắc]   [Thành viên]           |
++--------------------------------------+
+Màn hình Kho thuốc
++--------------------------------------+
+| Kho thuốc                            |
+| [Tìm kiếm theo tên thuốc...]         |
+| [Thành viên v] [Trạng thái v]        |
++--------------------------------------+
+| [Ảnh] Tên thuốc A                    |
+|       Người sử dụng: Thành viên 1    |
+|       Còn lại: [Số lượng]            |
+|       Hạn dùng: [Ngày/Chưa xác định] |
++--------------------------------------+
+| [Ảnh] Tên thuốc B                    |
+|       Người sử dụng: Thành viên 2    |
+|       Còn lại: [Số lượng]            |
+|       Trạng thái: Sắp hết hạn        |
++--------------------------------------+
+|             [+ Thêm thuốc]           |
++--------------------------------------+
+Màn hình Chi tiết thuốc
++--------------------------------------+
+| Chi tiết thuốc                       |
++--------------------------------------+
+| [Ảnh thuốc]                          |
+| Tên thuốc: [...]                     |
+| Hàm lượng: [...]                     |
+| Người sử dụng: [...]                 |
+| Số lượng còn lại: [...]              |
+| Hạn sử dụng: [...]                   |
+| Vị trí lưu trữ: [...]                |
++--------------------------------------+
+| [Lịch dùng] [Lịch sử tồn kho]        |
+| [Kiểm kê]     [Chỉnh sửa]             |
++--------------------------------------+
+Các khung trên mô tả cấu trúc thông tin cho đồ án, chưa phải thiết kế giao diện cuối cùng. Thiết kế UI/UX cần được hoàn thiện và kiểm thử bằng công cụ thiết kế trước khi phát triển.
+6.3. Key Interactions – Các tương tác chính
+1. Thêm thuốc
+•	Trigger: Người dùng chọn “Thêm thuốc”.
+•	Behavior: Hệ thống hiển thị biểu mẫu, kiểm tra dữ liệu và lưu bản ghi khi hợp lệ.
+•	Feedback: Hiển thị trạng thái lưu thành công hoặc thông báo lỗi tại trường liên quan.
+2. Xác nhận trạng thái sử dụng
+•	Trigger: Người dùng chọn “Đã dùng”, “Hoãn” hoặc “Bỏ qua”.
+•	Behavior: Hệ thống ghi trạng thái và thời điểm thao tác; cập nhật tồn kho nếu đủ điều kiện.
+•	Feedback: Hiển thị trạng thái mới và cập nhật lịch sử.
+3. Xử lý cảnh báo
+•	Trigger: Người dùng chọn một cảnh báo.
+•	Behavior: Hệ thống mở bản ghi thuốc tương ứng và hiển thị dữ liệu gây ra cảnh báo.
+•	Feedback: Người dùng có thể cập nhật thông tin hoặc đánh dấu đã kiểm tra.
+4. Kiểm kê tồn kho
+•	Trigger: Người dùng chọn thao tác kiểm kê.
+•	Behavior: Hệ thống cho phép đối chiếu số lượng thực tế và số lượng đang lưu.
+•	Feedback: Sau khi xác nhận, số lượng được cập nhật và lịch sử thay đổi được lưu.
+6.4. Design Principles – Nguyên tắc thiết kế
+•	Ưu tiên các tác vụ cốt lõi, hạn chế số bước không cần thiết.
+•	Hiển thị rõ người sử dụng, số lượng và hạn dùng.
+•	Chỉ yêu cầu thông tin bắt buộc cần thiết.
+•	Không che giấu trạng thái dữ liệu chưa xác định.
+•	Có phản hồi rõ ràng sau mỗi thao tác.
+•	Thiết kế chữ dễ đọc và nút bấm dễ thao tác cho người cao tuổi.
+•	Không gây hiểu nhầm giữa thông báo, xác nhận trong ứng dụng và việc sử dụng thuốc thực tế.
+•	Cho phép người dùng kiểm tra và sửa dữ liệu thay vì tự động suy đoán thông tin không chắc chắn.
+________________________________________
+7. ĐẶC TẢ KỸ THUẬT (TECHNICAL SPECIFICATIONS)
+7.1. System Architecture – Kiến trúc hệ thống
+Kiến trúc chi tiết chưa được chốt do còn phụ thuộc vào quyết định lưu trữ cục bộ hay đồng bộ qua máy chủ.
+Ở mức logic, hệ thống gồm các thành phần:
+1.	Mobile UI: Giao diện danh sách thuốc, chi tiết thuốc, thành viên, lịch nhắc và cảnh báo.
+2.	Application Logic: Xử lý nghiệp vụ thêm/sửa thuốc, tìm kiếm, lập lịch, xác nhận trạng thái và kiểm kê.
+3.	Data Storage: Lưu thông tin thành viên, thuốc, lịch nhắc, lịch sử và tồn kho theo phương án kiến trúc được chọn.
+4.	Notification Module: Lập lịch và quản lý thông báo trên thiết bị.
+5.	Security & Access Control: Quản lý xác thực, phân quyền và quyền truy cập dữ liệu.
+6.	Synchronization Module: Chỉ triển khai khi phạm vi đồng bộ nhiều thiết bị được phê duyệt.
+Đối với MVP, cần tránh phụ thuộc không cần thiết vào các dịch vụ ngoài. Việc chọn công nghệ, cơ sở dữ liệu và cơ chế xác thực phải được ghi nhận trong tài liệu Tech Stack riêng.
+7.2. Data Model – Mô hình dữ liệu
+Thực thể	Thuộc tính chính dự kiến	Quan hệ và mục đích
+Household	household_id, name, created_at	Đại diện một hộ gia đình; liên kết thành viên và thuốc
+Member	member_id, household_id, display_name, optional age information, status	Thành viên thuộc một hộ gia đình
+MedicineRecord	medicine_id, household_id, member_id, name, strength, dosage_form, quantity, unit, expiry_date, location, status	Lưu thông tin thuốc và số lượng hiện tại
+ReminderSchedule	schedule_id, medicine_id, member_id, start_date, end_date, times, recurrence, status	Lưu cấu hình lịch nhắc
+MedicationEvent	event_id, schedule_id, medicine_id, event_time, status, recorded_at	Ghi nhận trạng thái sử dụng hoặc bỏ qua
+StockMovement	movement_id, medicine_id, movement_type, quantity_change, reason, created_at, actor_id	Lưu lịch sử thay đổi tồn kho
+Alert	alert_id, medicine_id, alert_type, status, created_at	Lưu hoặc quản lý trạng thái cảnh báo khi cần
+User/AccessRole	user_id, household_id, role, permission_status	Quản lý quyền truy cập khi có xác thực hoặc chia sẻ
+AuditLog	log_id, actor_id, action, entity_type, entity_id, created_at	Truy vết các thao tác quan trọng
+Đây là mô hình khái niệm ban đầu; kiểu dữ liệu, khóa ngoại, ràng buộc và chỉ mục sẽ được đặc tả trong tài liệu Database Schema/ERD.
+Trong MVP, việc quản lý theo lô riêng và thời hạn sau mở chưa bắt buộc. Nếu triển khai Advanced, cần bổ sung thực thể lô thuốc để tránh áp dụng một hạn dùng cho nhiều lô có hạn khác nhau.
+Dữ liệu định danh, thông tin sức khỏe và log nghiệp vụ cần được phân loại trước khi xác định chính sách lưu trữ và quyền truy cập.
+7.3. API Requirements – Yêu cầu API
+Các endpoint dưới đây là đề xuất logic nếu dự án sử dụng backend/API. Chúng chưa phải hợp đồng API đã phê duyệt; nếu MVP sử dụng lưu trữ cục bộ, các nghiệp vụ tương ứng được triển khai qua tầng dữ liệu nội bộ.
+Endpoints Needed – Các endpoint dự kiến
+Endpoint	Method	Purpose	Request	Response
+/api/households/{householdId}/medicines	GET	Lấy danh sách thuốc	Bộ lọc, từ khóa, phân trang nếu cần	Danh sách bản ghi thuốc
+/api/households/{householdId}/medicines	POST	Thêm thuốc	Thông tin thuốc và số lượng	Bản ghi vừa tạo
+/api/medicines/{medicineId}	GET	Xem chi tiết thuốc	ID thuốc	Thông tin thuốc và trạng thái
+/api/medicines/{medicineId}	PATCH	Cập nhật thuốc	Các trường được phép sửa	Bản ghi sau cập nhật
+/api/medicines/{medicineId}/reminder-schedules	POST	Tạo lịch nhắc	Thời điểm và quy tắc lặp	Lịch nhắc đã tạo
+/api/reminder-events/{eventId}/status	POST	Ghi nhận trạng thái sử dụng	Trạng thái và thời điểm thao tác	Trạng thái mới và kết quả xử lý
+/api/households/{householdId}/alerts	GET	Lấy danh sách cảnh báo	Bộ lọc trạng thái hoặc loại cảnh báo	Danh sách cảnh báo
+/api/medicines/{medicineId}/stock-adjustments	POST	Điều chỉnh tồn kho	Số lượng, loại thay đổi và lý do	Số lượng mới và lịch sử thay đổi
+Yêu cầu chung:
+•	API phải kiểm tra quyền truy cập và tính hợp lệ của dữ liệu.
+•	Phản hồi lỗi cần có mã trạng thái và thông báo phù hợp.
+•	Không thực hiện thao tác trừ kho trùng lặp khi một sự kiện được gửi lại.
+•	Không trả về dữ liệu ngoài phạm vi quyền được cấp.
+•	Các trường dữ liệu chi tiết sẽ được xác định trong tài liệu API riêng.
+7.4. Third-Party Integrations – Tích hợp bên thứ ba
+Trong phạm vi MVP:
+•	Sử dụng cơ chế thông báo phù hợp với hệ điều hành được chọn.
+•	Sử dụng quyền truy cập camera/thư viện ảnh nếu thiết kế cho phép đính kèm ảnh thuốc.
+•	Chưa bắt buộc tích hợp cơ sở dữ liệu thuốc bên ngoài.
+•	Chưa bắt buộc tích hợp nhà thuốc, mua thuốc trực tuyến hoặc thanh toán.
+•	Chưa chốt dịch vụ xác thực, lưu trữ đám mây hoặc phân tích bên thứ ba.
+Bất kỳ dịch vụ bên thứ ba nào được bổ sung cần được đánh giá về quyền truy cập dữ liệu, chi phí, độ tin cậy và yêu cầu pháp lý trước khi sử dụng.
+7.5. Technical Constraints – Ràng buộc kỹ thuật
+•	Dữ liệu trong MVP chủ yếu phụ thuộc vào thông tin do người dùng nhập; hệ thống không được mặc định dữ liệu luôn chính xác.
+•	Khả năng lập lịch và hiển thị thông báo chịu ảnh hưởng bởi hệ điều hành và quyền thiết bị.
+•	Đồng bộ nhiều thiết bị làm tăng độ phức tạp của xác thực, phân quyền và xử lý xung đột.
+•	OCR có thể nhận diện sai các thông tin quan trọng, do đó phải có bước xác nhận của người dùng.
+•	Dữ liệu về thuốc cần được quản lý chặt chẽ và không được tự suy đoán liều dùng, hạn sử dụng hoặc thời hạn sau mở.
+•	Kiến trúc phải phù hợp với nguồn lực đồ án và có khả năng mở rộng các chức năng được ưu tiên sau MVP.
+7.6. Analytics & Tracking – Phân tích và theo dõi sử dụng
+Events to Track – Các sự kiện cần theo dõi
+Event Name	Trigger	Properties	Purpose
+household_setup_completed	Hoàn thành tạo hồ sơ hộ gia đình	Kết quả, thời gian hoàn tất	Đo tỷ lệ kích hoạt
+medicine_created	Tạo bản ghi thuốc thành công	Kết quả, số trường đã hoàn thành, thời gian thao tác	Đo mức độ thuận tiện của quy trình nhập
+medicine_search_performed	Thực hiện tìm kiếm	Loại bộ lọc, có/không có kết quả	Đánh giá khả năng tìm thuốc
+reminder_schedule_created	Tạo lịch nhắc	Kết quả, loại quy tắc lặp	Đánh giá việc sử dụng tính năng nhắc
+medication_event_recorded	Ghi nhận trạng thái sử dụng	Loại trạng thái, kết quả thao tác	Đánh giá luồng ghi nhận sử dụng
+inventory_adjusted	Điều chỉnh tồn kho	Loại điều chỉnh, kết quả	Đánh giá nhu cầu kiểm kê
+alert_opened	Người dùng mở cảnh báo	Loại cảnh báo, trạng thái xử lý	Đánh giá mức độ tương tác với cảnh báo
+backup_or_restore_result	Hoàn tất hoặc thất bại thao tác sao lưu/khôi phục	Loại thao tác, kết quả	Theo dõi độ tin cậy dữ liệu
+Nguyên tắc theo dõi:
+•	Không đưa tên thuốc, liều dùng, tên thành viên hoặc dữ liệu sức khỏe chi tiết vào log phân tích nếu không thực sự cần thiết và chưa có cơ sở xử lý phù hợp.
+•	Chỉ thu thập dữ liệu phục vụ đo lường mục tiêu sản phẩm.
+•	Quyền truy cập dữ liệu phân tích phải được kiểm soát.
+•	Các sự kiện và thuộc tính cụ thể cần được rà soát cùng phương án bảo vệ dữ liệu trước khi triển khai.
+________________________________________
+8. PHỤ THUỘC VÀ RỦI RO (DEPENDENCIES & RISKS)
+8.1. Dependencies – Các yếu tố phụ thuộc
+Dependency	Owner	Status	Impact if Delayed	Mitigation
+Phê duyệt phạm vi MVP	Product Manager / Nhóm dự án	Chưa xác nhận	Phát sinh thay đổi yêu cầu và ảnh hưởng tiến độ	Chốt danh sách MUST trước khi phát triển
+Quyết định nền tảng và Tech Stack	Technical Lead / Developer	Chưa xác nhận	Ảnh hưởng kiến trúc và khả năng triển khai	Thực hiện đánh giá kỹ thuật ngắn trước khi khóa công nghệ
+Hoàn thiện User Flow và Wireframe	UI/UX Designer	Chưa hoàn tất	Developer thiếu cơ sở triển khai giao diện	Ưu tiên luồng thêm thuốc, tìm thuốc và lịch nhắc
+Thiết kế ERD và quy tắc dữ liệu	Developer / BA	Chưa hoàn tất	Có thể phải thay đổi cấu trúc dữ liệu về sau	Rà soát quan hệ và trường dữ liệu trước khi lập trình
+Quy tắc lập lịch và trừ tồn kho	BA / Developer	Chưa xác nhận	Có nguy cơ sai lệch tồn kho hoặc lịch sử	Đặc tả rõ sự kiện xác nhận, đơn vị và điều kiện trừ kho
+Thiết bị và môi trường kiểm thử	QA / Nhóm dự án	Chưa xác nhận	Không thể kiểm thử đầy đủ thông báo và giao diện	Xác định thiết bị mục tiêu và bộ dữ liệu kiểm thử
+Rà soát bảo mật và dữ liệu cá nhân	Nhóm dự án / Người hướng dẫn	Cần thực hiện	Có thể ảnh hưởng thiết kế và phát hành	Đưa yêu cầu dữ liệu vào giai đoạn thiết kế, không chờ đến cuối
+Người dùng thử nghiệm	Product Manager / Nhóm dự án	Chưa tuyển	Thiếu dữ liệu kiểm chứng sản phẩm	Chuẩn bị nhóm pilot và kịch bản thử nghiệm sớm
+8.2. Risks & Mitigation – Rủi ro và biện pháp giảm thiểu
+High Risk – Rủi ro cao
+1. Dữ liệu tồn kho không phản ánh thực tế
+•	Probability: High
+•	Impact: High
+•	Mitigation: Có lịch sử điều chỉnh, xác nhận thao tác, kiểm kê và quy tắc trừ kho rõ ràng; không tự động trừ chỉ vì thông báo được gửi.
+•	Owner: Product Manager / Developer / QA
+2. Thông báo không hiển thị như mong đợi
+•	Probability: Medium
+•	Impact: High
+•	Mitigation: Kiểm thử trên thiết bị mục tiêu; kiểm tra quyền thông báo; hướng dẫn người dùng khi quyền bị tắt; không cam kết thông báo luôn hoạt động trong mọi điều kiện.
+•	Owner: Developer / QA
+3. Lộ dữ liệu sức khỏe hoặc cấp quyền truy cập sai
+•	Probability: Medium
+•	Impact: High
+•	Mitigation: Thiết kế phân quyền, giới hạn dữ liệu thu thập, bảo vệ dữ liệu khi lưu và truyền, kiểm thử quyền truy cập và rà soát tuân thủ trước khi phát hành.
+•	Owner: Developer / Nhóm dự án
+Medium Risk – Rủi ro trung bình
+1. Người dùng không duy trì nhập và cập nhật thuốc
+•	Probability: High
+•	Impact: Medium
+•	Mitigation: Giảm số thao tác, hỗ trợ tìm kiếm nhanh, cho phép kiểm kê và điều chỉnh dữ liệu.
+•	Owner: Product Manager / UI/UX Designer
+2. Nhận diện sai dữ liệu thuốc khi triển khai OCR
+•	Probability: Medium
+•	Impact: High
+•	Mitigation: Không triển khai OCR tự động hoàn toàn trong MVP; yêu cầu người dùng xác nhận thông tin quan trọng.
+•	Owner: Developer / QA
+3. Phạm vi sản phẩm tăng vượt khả năng thực hiện
+•	Probability: Medium
+•	Impact: High
+•	Mitigation: Duy trì phân loại P0/P1/P2; mọi tính năng mới cần đánh giá tác động trước khi đưa vào phạm vi.
+•	Owner: Product Manager / Nhóm dự án
+4. Thiếu dữ liệu chuyên môn cho tính năng tương tác thuốc
+•	Probability: Medium
+•	Impact: High
+•	Mitigation: Không đưa chức năng này vào MVP; chỉ xem xét khi xác định được nguồn dữ liệu và quy trình rà soát chuyên môn phù hợp.
+•	Owner: Product Manager / Nhóm dự án
+8.3. Open Questions – Các câu hỏi còn mở
+•	MVP triển khai trên Android, iOS hay cả hai?
+•	Dữ liệu sẽ được lưu hoàn toàn cục bộ hay đồng bộ qua máy chủ?
+•	MVP có cần cho phép nhiều điện thoại cùng quản lý một hộ gia đình không?
+•	Những trường nào là bắt buộc khi thêm một loại thuốc?
+•	Cảnh báo hạn dùng mặc định sẽ được cấu hình như thế nào?
+•	Quy tắc tự động trừ tồn kho được áp dụng trong những trường hợp nào?
+•	Nguồn dữ liệu thuốc tiếng Việt nào có thể sử dụng hợp lệ trong Advanced?
+•	Những ngưỡng KPI nào sẽ được phê duyệt sau giai đoạn pilot?
+•	Phương án sao lưu, khôi phục và xuất dữ liệu nào phù hợp với kiến trúc đồ án?
+________________________________________
+9. TIẾN ĐỘ VÀ CÁC CỘT MỐC (TIMELINE & MILESTONES)
+9.1. Development Phases – Các giai đoạn phát triển
+Các mốc thời gian được tính tương đối từ khi phạm vi và nguồn lực được xác nhận. Đây là ước lượng ban đầu cho đồ án, không phải cam kết ngày phát hành.
+Phase	Timeline	Key Deliverables	Owner
+Discovery	Tuần 1–2	Hoàn thiện PRD, phân tích đối thủ, xác nhận giả thuyết và phạm vi MVP	Product Manager / BA
+Design	Tuần 2–3	User Flow, Wireframes, prototype và thiết kế UI cơ bản	UI/UX Designer
+Development Sprint 1	Tuần 3–4	Quản lý hộ gia đình, thành viên và kho thuốc	Developer
+Development Sprint 2	Tuần 5–6	Tìm kiếm, lịch nhắc, nhật ký sử dụng, cảnh báo và cập nhật tồn kho	Developer
+QA & Testing	Tuần 7–8	Test Plan, Test Cases, kiểm thử chức năng và sửa lỗi	QA / Developer
+Beta Launch	Tuần 9	Phát hành thử nghiệm giới hạn, thu thập phản hồi và đo các chỉ số ban đầu	Nhóm dự án
+Full Launch / Project Demo	Tuần 10	Bàn giao MVP và trình diễn các luồng nghiệp vụ chính trong đồ án	Nhóm dự án
+Post-Launch	Tuần 11–12	Đánh giá kết quả pilot, tổng hợp bài học và đề xuất cải tiến	Product Manager / Nhóm dự án
+Thời gian có thể điều chỉnh theo kế hoạch học phần, số lượng thành viên, tiến độ thiết kế và mức độ phức tạp kỹ thuật.
+9.2. Key Milestones – Các cột mốc quan trọng
+•	M1 – Hoàn thành PRD: Cuối tuần 2. Chốt mục tiêu, phạm vi MVP và các yêu cầu ưu tiên.
+•	M2 – Hoàn thành thiết kế: Cuối tuần 3. Thông qua luồng thao tác và wireframe chính.
+•	M3 – Hoàn thành chức năng cốt lõi: Cuối tuần 6. Có thể thêm và tìm thuốc, quản lý thành viên, lập lịch và ghi nhận sử dụng.
+•	M4 – Hoàn thành kiểm thử: Cuối tuần 8. Các lỗi nghiêm trọng được xử lý hoặc có quyết định rõ ràng về việc chưa phát hành.
+•	M5 – Hoàn thành pilot/demo: Tuần 9–10. Ghi nhận kết quả kiểm thử và phản hồi.
+•	M6 – Tổng kết dự án: Tuần 11–12. Đánh giá KPI, hạn chế, kết quả và hướng phát triển Advanced.
+________________________________________
+10. KẾ HOẠCH SAU TRIỂN KHAI (POST-LAUNCH PLAN)
+10.1. Success Criteria Check-in Schedule – Lịch đánh giá chỉ số
+•	Tuần 1: Đánh giá khả năng thiết lập hộ gia đình, thêm thuốc đầu tiên, lỗi nhập liệu và lỗi chức năng cơ bản.
+•	Tuần 4: Đánh giá khả năng tìm thuốc, mức độ cập nhật tồn kho, độ chính xác cảnh báo và phản hồi của người dùng.
+•	Tuần 12: Tổng hợp kết quả pilot, tỷ lệ quay lại, sai lệch tồn kho, vấn đề thông báo và các hạn chế kỹ thuật; quyết định tính năng Advanced nào cần ưu tiên.
+Các mốc trên là lịch đánh giá đề xuất. Nếu thời lượng đồ án không đủ 12 tuần, nhóm cần chọn mốc tương ứng với kế hoạch thực tế.
+10.2. Iteration Plan – Kế hoạch cải tiến
+Thu thập phản hồi
+•	Quan sát người dùng thực hiện các tác vụ chính.
+•	Ghi nhận các bước nhập thuốc gây khó khăn.
+•	Thu thập phản hồi về giao diện, tìm kiếm, cảnh báo và lịch nhắc.
+•	Tổng hợp lỗi từ Test Cases và Bug Report Logs.
+•	Phân biệt phản hồi về lỗi kỹ thuật với đề xuất thêm tính năng.
+Chu kỳ cập nhật
+•	Trong MVP: sửa lỗi theo mức độ nghiêm trọng và ưu tiên các vấn đề ảnh hưởng đến dữ liệu, lịch nhắc và bảo mật.
+•	Sau pilot: điều chỉnh giao diện hoặc luồng thao tác khi dữ liệu cho thấy người dùng gặp khó khăn.
+•	Đối với Advanced: chỉ triển khai khi có căn cứ từ phản hồi và đánh giá khả thi.
+Sunset Plan
+Chưa áp dụng trong phạm vi đồ án. Nếu dừng thử nghiệm hoặc ngừng duy trì bản demo, nhóm cần xác định cách bàn giao, lưu trữ hoặc xóa dữ liệu thử nghiệm theo chính sách đã thông báo.
+10.3. Learning Goals – Mục tiêu học hỏi
+•	Xác định người dùng có sẵn sàng nhập và cập nhật thông tin thuốc thường xuyên hay không.
+•	Đánh giá liệu quản lý theo thành viên có thực sự giúp giảm nhầm lẫn.
+•	Kiểm tra độ chính xác của quy tắc cảnh báo hạn dùng và tồn kho.
+•	Đánh giá tính ổn định của lịch nhắc trên nền tảng mục tiêu.
+•	Xác định nguyên nhân gây sai lệch tồn kho.
+•	Đánh giá khả năng thực hiện kiến trúc dữ liệu và các luồng nghiệp vụ trong phạm vi nguồn lực đồ án.
+•	Sử dụng kết quả thử nghiệm để đề xuất các chức năng Advanced có giá trị nhất.
+________________________________________
+11. PHỤ LỤC (APPENDIX)
+11.1. References – Tài liệu tham khảo
+Nghiên cứu thị trường
+1.	Nghiên cứu về lưu trữ thuốc tại hộ gia đình ở Đà Nẵng:
+https://pmc.ncbi.nlm.nih.gov/articles/PMC10812093/
+2.	Nghiên cứu về lưu trữ và sử dụng kháng sinh tại Việt Nam:
+https://pmc.ncbi.nlm.nih.gov/articles/PMC12105128/
+Đối thủ cạnh tranh
+1.	Medisafe: https://play.google.com/store/apps/details?id=com.medisafe.android.client
+2.	MyTherapy: https://play.google.com/store/apps/details?id=eu.smartpatient.mytherapy
+3.	CareClinic: https://careclinic.io/medicine-tracker/
+4.	Pillo: https://apps.apple.com/vn/app/pillo-pill-reminder-tracker/id6736664288
+5.	HomeMed: https://play.google.com/store/apps/details?id=com.devasyainnovation.home_med
+6.	DrugBank: https://play.google.com/store/apps/details?id=app.drugbank
+Văn bản pháp luật về dữ liệu cá nhân
+1.	Luật Bảo vệ dữ liệu cá nhân số 91/2025/QH15, có hiệu lực từ ngày 01/01/2026:
+https://chinhphu.vn/?classid=1&docid=214590&orggroupid=1&pageid=27160
+2.	Nghị định số 356/2025/NĐ-CP quy định chi tiết một số điều và biện pháp thi hành Luật Bảo vệ dữ liệu cá nhân, có hiệu lực từ ngày 01/01/2026:
+https://chinhphu.vn/?docid=216387&pageid=27160
+Các văn bản trên là cơ sở tham khảo cho việc thiết kế yêu cầu bảo vệ dữ liệu. Nhóm dự án cần rà soát đầy đủ các quy định áp dụng với mô hình xử lý dữ liệu thực tế trước khi phát hành sản phẩm.
+11.2. Changelog – Lịch sử thay đổi tài liệu
+Date	Version	Changes	Author
+27/10/2026	1.0	Xây dựng bản PRD đầu tiên; xác định vấn đề, mục tiêu, chân dung người dùng, yêu cầu MVP, Advanced, thiết kế, kỹ thuật, rủi ro và lộ trình	Nhóm dự án FamMed
+TBD	1.1	Cập nhật theo phản hồi của nhóm dự án và người hướng dẫn; chốt nền tảng, kiến trúc và các vấn đề còn mở	TBD
+11.3. Stakeholder Approvals – Xác nhận của các bên liên quan
+•	Product Manager / Business Analyst: Xác nhận mục tiêu, yêu cầu và phạm vi sản phẩm – Người xác nhận: __________ – Ngày: __________
+•	Developer / Technical Lead: Xác nhận tính khả thi của kiến trúc và yêu cầu kỹ thuật – Người xác nhận: __________ – Ngày: __________
+•	UI/UX Designer: Xác nhận luồng nghiệp vụ và thiết kế trải nghiệm – Người xác nhận: __________ – Ngày: __________
+•	QA Engineer: Xác nhận khả năng kiểm thử và tiêu chí nghiệm thu – Người xác nhận: __________ – Ngày: __________
+•	Giảng viên hướng dẫn: Xác nhận phạm vi và định hướng đồ án – Người xác nhận: __________ – Ngày: __________
+________________________________________
+KẾT THÚC TÀI LIỆU PRD v1.0
+Trạng thái: Bản dự thảo chờ rà soát và phê duyệt.
+Điều kiện chuyển sang triển khai: Chốt phạm vi MVP, nền tảng kỹ thuật, mô hình lưu trữ dữ liệu, quy tắc tồn kho và lịch nhắc, cùng các tiêu chí nghiệm thu quan trọng.
+
